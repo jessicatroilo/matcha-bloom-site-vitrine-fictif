@@ -66,7 +66,7 @@ MatchaBloom/
 1. Cloner ce dépôt :
    ```bash
    git clone <url-du-repo>
-   cd MatchaBloom
+   cd matcha-bloom-site-vitrine-fictif
    ```
 
 2. Installer les dépendances PHP :
