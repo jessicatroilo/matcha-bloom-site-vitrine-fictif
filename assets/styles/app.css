@@ -4,7 +4,12 @@
 
 
 body {
-    background-color: skyblue;
-    font-family: Poppins, sans-serif;
-    
+    background-color: footer-text;
+    font-family: 'Poppins', sans-serif; 
+};
+
+@layer utilities {
+    .footer-title {
+        @apply lg:text-lg text-base text-footer-text font-bold uppercase;
+    }
 }

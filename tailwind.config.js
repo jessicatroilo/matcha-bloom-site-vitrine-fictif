@@ -14,7 +14,12 @@ module.exports = {
       'text': '#464242',
       'footer-text': '#FFF8E2',
     },
-    extend: {},
+    
+    extend: {
+      backgroundImage: {
+        'footer': "url('/public/images/footer-bg.svg')",
+      },
+    },
   },
   plugins: [],
 }

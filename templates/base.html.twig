@@ -1,20 +1,123 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <!-- META -->
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Entrez dans l'univers de notre Salon Matcha Bloom, spécialisé dans le matcha. Venez dans notre salon déguster nos spécialités!"> 
+
+        <title>{% block title %}Bienvenue chez Matcha Bloom !{% endblock %}</title>
+
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="#" type="image/x-icon" alt="Logo de l'entreprise">
+
+        <!-- FONT AWESOME, Icons -->
+        <script src="https://kit.fontawesome.com/275e06ef04.js" crossorigin="anonymous"></script>
+
+        <!-- CSS, Tailwindcss -->
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
+        <!-- JS, Encore -->
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}
-        {% endblock %}
+    <body class="min-h-screen">
+        <!-- HEADER, NAV -->
+        <header role="banner">
+            <nav>
+                <div role="navigation">
+                    <div>
+                        <!-- LOGO ENTREPRISE-->
+                        <div>
+                            <a href="{{ path('app_home')}}">
+                                <img src="" alt="Logo - NOM ENTREPRISE" >
+                                <h1>Matcha Bloom</h1>
+                            </a>
+                        </div>
+                        <!-- NAVIGATION DESKTOP -->
+                        <div class="hidden md:flex space-x-4">
+                            <a href="{{path ('app_salon_tea') }}" > Salon</a>                              
+                            <a href="{{path ('app_menu') }}">Menu</a>
+                            <a href="{{path ('app_gallery') }}">Gallerie</a>
+                        </div>
+                        <!-- NAVIGATION MOBILE - menu button -->
+                        <div class="md:hidden flex items-center">
+                            <button id="burger-menu" aria-label="Bouton du menu de navigation du site">
+                            <span class="sr-only">Ouvrir le menu</span> 
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- NAVIGATION MOBILE - menu -->
+                    <div id="menu" class="md:hidden hidden px-4 py-6">
+                        <ul>
+                            <li>
+                                <a href="{{ path('app_salon_tea') }}" class="block"> Salon</a>        
+                            </li>
+                            <li>
+                                <a href="{{ path('app_menu') }}" class="block"> Menu</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('app_gallery') }}" class="block"> Gallerie</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- MAIN -->
+        <main role="main">
+        {% block body %}{% endblock %}
+        </main>
+
+        <!-- FOOTER -->
+        <footer role="contentinfo" class="mt-auto flex flex-shrink bg-footer bg-center">
+            <div role="navigation" class="max-w-screen-xl w-full gap-8 p-4 mx-auto flex items-center justify-center flex-col">
+                <div class= "flex lg:flex-row flex-col m-4 p-4 gap-96">
+                    <!-- A PROPOS -->
+                    <div class="flex flex-col justify-end lg:items-start items-center w-full mb-4">
+                        <h4 class="footer-title mb-3"> A propos </h4>
+                        <ul class="lg:text-start text-center">
+                            <li class="lg:text-xl text-lg mb-2"><a href="{{path ('app_salon_tea') }}" class=" hover:text-pink-watermelon text-footer-text " > Notre histoire </a></li>
+                            <li class="lg:text-xl text-lg mb-2"><a href="{{path ('app_menu') }}" class="text-footer-text hover:text-pink-watermelon"> Menu </a></li>
+                            <li class="lg:text-xl text-lg mb-2"><a href="{{path ('app_contact') }}" class="text-footer-text hover:text-pink-watermelon"> Contactez-nous </a></li>
+                        </ul>
+                    </div>
+                    <!-- SOCIAL MEDIA -->
+                    <div class="flex flex-col items-center lg:mr-32 mb-4 w-full">
+                        <h4 class="footer-title mb-3"> Réseaux sociaux </h4>
+                        <ul class="flex flex-row"> 
+                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Facebook" class="text-footer-text hover:text-pink-watermelon"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Twitter" class="text-footer-text  hover:text-pink-watermelon"> <i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Linkedin" class="text-footer-text  hover:text-pink-watermelon"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Instagram" class="text-footer-text  hover:text-pink-watermelon"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Youtube" class="text-footer-text  hover:text-pink-watermelon"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- MENTIONS LEGALES -->
+                <div class="flex flex-col items-center">
+                    <img src="{{ asset('images/footer-logo-complete.svg') }}" alt="Logo - Matcha Bloom"  class="w-80 h-80">
+                    <ul class="flex flex-row">
+                        <li class="m-2 lg:text-lg text-md font-bold"><a href="{{path ('app_legal_notice') }}" class="text-footer-text hover:text-pink-watermelon"> Mentions Légales |</a></li>
+                        <li class="m-2 lg:text-lg text-md font-bold"><a href="{{path ('app_confidentiality_policy') }}" class="text-footer-text hover:text-pink-watermelon"> Politique de Confidentialité |</a></li>
+                        <li class="m-2 lg:text-lg text-md font-bold"><a href="#" class="text-footer-text hover:text-pink-watermelon"> Politique des Cookies |</a></li>
+                        <li class="m-2 lg:text-lg text-md font-bold"><a href="#" class="text-footer-text hover:text-pink-watermelon"> Gestion des Cookies </a></li>
+                    </ul>
+                    <p class="font-bold text-footer-text">&copy; 2025 - Matcha Bloom - 
+                    Site créé par Jessica Troilo 
+                    <a href="https://www.linkedin.com/in/jessica-troilo-dev/"  target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/jessicatroilo"  target="_blank" ><i class="fa-brands fa-github"></i></a>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
