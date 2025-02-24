@@ -4,7 +4,53 @@
 
 
 body {
-    background-color: skyblue;
-    font-family: Poppins, sans-serif;
-    
+    background-color: footer-text;
+    font-family: 'Poppins', sans-serif; 
+};
+
+@layer utilities {
+
+
+    /* Navbar */
+    .navbar-title {
+        @apply text-text font-bold text-2xl hover:text-matcha-accent hover:underline;
+    }
+
+    .navbar-burger-title {
+        @apply block text-text hover:text-matcha-accent text-2xl font-light;
+    }
+
+    .search-btn {
+        @apply block p-2 text-footer-text bg-matcha hover:bg-matcha-accent hover:text-grey-lavender rounded-lg;
+    }
+    /* Footer */
+    .footer-title {
+        @apply lg:text-lg text-base text-footer-text font-bold uppercase mb-3;
+    }
+
+    .footer-subtitle-about {
+        @apply lg:text-xl text-lg mb-2;
+    }
+
+    .footer-link-about {
+        @apply  hover:text-matcha-light text-footer-text hover:underline;
+    }
+
+    .footer-link-social {
+        @apply hover:text-matcha-light text-footer-text;
+    }
+
+    .footer-subtitle-social {
+        @apply m-2 lg:text-4xl text-2xl; 
+    }
+
+    .footer-link-mentions {
+        @apply hover:text-matcha-light text-footer-text hover:underline;
+    }
+
+    .footer-subtitle-mentions {
+        @apply m-2 lg:text-lg text-sm font-bold;
+    }
+
+
 }
