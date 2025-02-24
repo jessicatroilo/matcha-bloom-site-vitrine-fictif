@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
     <!-- META -->
         <meta charset="UTF-8">
@@ -9,8 +9,11 @@
         <title>{% block title %}Bienvenue chez Matcha Bloom !{% endblock %}</title>
 
         <!-- FAVICON -->
-        <link rel="shortcut icon" href="#" type="image/x-icon" alt="Logo de l'entreprise">
+        <link rel="shortcut icon" href="{{ asset('images/salon-icon.svg') }}" type="image/x-icon" alt="Logo de l'entreprise">
 
+        <!-- IMG -->
+        <link rel="preload" href="/public/images/footer-bg.avif" as="image">
+        <link rel="preload" href="/public/images/footer-bg.svg" as="image">
         <!-- FONT AWESOME, Icons -->
         <script src="https://kit.fontawesome.com/275e06ef04.js" crossorigin="anonymous"></script>
 
@@ -18,14 +21,8 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
-
-        <!-- JS, Encore -->
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
     </head>
-    <body class="min-h-screen">
+    <body class="flex flex-col min-h-screen">
         <!-- HEADER, NAV -->
         <header role="banner">
             <nav>
@@ -38,25 +35,17 @@
                                 <i id="icon-search"class="fa-solid fa-magnifying-glass text-2xl text-matcha-accent"></i>    
                             </button>
                         </div>
-
-                        <!-- RECHERCHE - input -->
-                        <div id="search" class="hidden px-4 py-6 flex flex-row items-center gap-1">
-                            <input type="search" placeholder="votre recherche..." class="block w-full p-2 text-text bg-white border border-matcha rounded-lg">
-                            <button aria-label="Bouton de recherche" class="block p-2 text-footer-text bg-matcha hover:bg-matcha-accent rounded-lg">
-                                <p> Rechercher </p>
-                            </button>
-                        </div>
                         <!-- LOGO ENTREPRISE-->
                         <div class="flex items-center">
-                            <a href="{{ path('app_home')}}">
-                            <h1><img src="{{ asset('images/logo-nav.svg') }}" alt="Logo - Matcha Bloom" class="w-60"></h1>
+                            <a href="{{ path('app_home')}}" aria-label="Logo Matcha Bloom - Bouton de retour à la page d'accueil">
+                            <img src="{{ asset('images/logo-nav.svg') }}" alt="Logo - Matcha Bloom - Tasse verte avec le nom de l'entreprise en dessous" class="w-60 h-20">
                             </a>
                         </div>
                         <!-- NAVIGATION DESKTOP -->
                         <div class="hidden md:flex space-x-4">
-                            <a href="{{path ('app_salon_tea') }}" class="text-text font-bold text-2xl" > Salon</a>                              
-                            <a href="{{path ('app_menu') }}" class="text-text font-bold text-2xl">Menu</a>
-                            <a href="{{path ('app_gallery') }}" class="text-text font-bold text-2xl">Gallerie</a>
+                            <a href="{{path ('app_salon_tea') }}" class="navbar-title" > Salon</a>                              
+                            <a href="{{path ('app_menu') }}" class="navbar-title">Menu</a>
+                            <a href="{{path ('app_gallery') }}" class="navbar-title">Gallerie</a>
                         </div>
                         <!-- NAVIGATION MOBILE - menu button -->
                         <div class="md:hidden flex items-center">
@@ -69,66 +58,95 @@
                         </div>
                     </div>
                     <!-- NAVIGATION MOBILE - menu -->
-                    <div id="menu" class="md:hidden hidden px-4 py-6">
-                        <ul>
+                    <div id="menu" class="md:hidden hidden px-4 py-6 shadow-lg">
+                        <ul class="flex items-center flex-col gap-4">
                             <li>
-                                <a href="{{ path('app_salon_tea') }}" class="block text-text font-bold text-2xl"> Salon</a>        
+                                <a href="{{ path('app_salon_tea') }}" class="navbar-burger-title"> Salon</a>        
                             </li>
                             <li>
-                                <a href="{{ path('app_menu') }}" class="block text-text font-bold text-2xl"> Menu</a>
+                                <a href="{{ path('app_menu') }}" class="navbar-burger-title"> Menu</a>
                             </li>
                             <li>
-                                <a href="{{ path('app_gallery') }}" class="block text-text font-bold text-2xl"> Gallerie</a>
+                                <a href="{{ path('app_gallery') }}" class="navbar-burger-title"> Gallerie</a>
                             </li>
                         </ul>
+                    </div>
+                    <!-- RECHERCHE - input -->
+                    <div id="search" class="hidden px-4 lg:px-96 py-6 w-full">
+                        <div class="flex flex-row gap-1">
+                            <input type="search" placeholder="votre recherche..." class="block w-full p-2 text-text bg-white border border-matcha rounded-lg">
+                            <button aria-label="Bouton de recherche" class="search-btn">
+                                <p> Rechercher </p>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </nav>
         </header>
 
         <!-- MAIN -->
-        <main role="main">
+        <main role="main" class=" flex flex-grow">
         {% block body %}{% endblock %}
         </main>
 
         <!-- FOOTER -->
-        <footer role="contentinfo" class="mt-auto flex flex-shrink bg-footer bg-matcha-accent bg-center">
+        <footer role="contentinfo" class="mt-auto bg-footer bg-matcha-accent lg:bg-center bg-cover">
             <div role="navigation" class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center justify-center flex-col">
-                <div class= "flex justify-between lg:flex-row flex-col m-4 gap-8 w-full">
+                <div class= "flex justify-between lg:flex-row flex-col-reverse m-4 gap-8 w-full">
                     <!-- A PROPOS -->
-                    <div class="flex flex-col lg:items-start items-center w-full ms-4">
-                        <h4 class="footer-title mb-3"> A propos </h4>
+                    <div class="flex flex-col lg:items-start items-center lg:justify-start justify-center w-full lg:ms-4">
+                        <h4 class="footer-title"> A propos </h4>
                         <ul class="lg:text-start text-center">
-                            <li class="lg:text-xl text-lg mb-2"><a href="{{path ('app_salon_tea') }}" class=" hover:text-matcha text-footer-text " > Notre histoire </a></li>
-                            <li class="lg:text-xl text-lg mb-2"><a href="{{path ('app_menu') }}" class="text-footer-text hover:text-pink-watermelon"> Menu </a></li>
-                            <li class="lg:text-xl text-lg mb-2"><a href="{{path ('app_contact') }}" class="text-footer-text hover:text-pink-watermelon"> Contactez-nous </a></li>
+                            <li class="footer-subtitle-about"><a href="{{path ('app_salon_tea') }}" class="footer-link-about" > Notre histoire </a></li>
+                            <li class="footer-subtitle-about"><a href="{{path ('app_menu') }}" class="footer-link-about"> Menu </a></li>
+                            <li class="footer-subtitle-about"><a href="{{path ('app_contact') }}" class="footer-link-about"> Contactez-nous </a></li>
                         </ul>
                     </div>
                     <!-- LOGO ENTREPRISE -->
-                    <div class="flex justify-end w-full">
-                        <img src="{{ asset('images/footer-logo.svg') }}" alt="Logo - Matcha Bloom"  class="w-96 h-96">
+                    <div class="flex lg:justify-end justify-center w-full">
+                        <img src="{{ asset('images/footer-logo.svg') }}" alt="Logo - Matcha Bloom"  class="lg:w-96 lg:h-96 w-64 h-64" >
                     </div>
                     <!-- SOCIAL MEDIA -->
                     <div class="flex flex-col items-center w-full">
-                        <h4 class="footer-title mb-3"> Réseaux sociaux </h4>
+                        <h4 class="footer-title"> Réseaux sociaux </h4>
                         <ul class="flex flex-row"> 
-                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Facebook" class="text-footer-text hover:text-pink-watermelon"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Twitter" class="text-footer-text  hover:text-pink-watermelon"> <i class="fa-brands fa-x-twitter"></i></a></li>
-                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Linkedin" class="text-footer-text  hover:text-pink-watermelon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Instagram" class="text-footer-text  hover:text-pink-watermelon"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li class="m-2 lg:text-4xl text-2xl"><a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Youtube" class="text-footer-text  hover:text-pink-watermelon"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li class="footer-subtitle-social">
+                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Facebook" class="footer-link-social">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="footer-subtitle-social">
+                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Twitter" class="footer-link-social"> 
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="footer-subtitle-social">
+                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Linkedin" class="footer-link-social">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                            <li class="footer-subtitle-social">
+                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Instagram" class="footer-link-social">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="footer-subtitle-social">
+                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Youtube" class="footer-link-social">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <!-- MENTIONS LEGALES -->
                 <div class="flex flex-col items-center justify-center w-full">
-                    <ul class="flex flex-row">
-                        <li class="m-2 lg:text-lg text-md font-bold"><a href="{{path ('app_legal_notice') }}" class="text-footer-text hover:text-pink-watermelon"> Mentions Légales |</a></li>
-                        <li class="m-2 lg:text-lg text-md font-bold"><a href="{{path ('app_confidentiality_policy') }}" class="text-footer-text hover:text-pink-watermelon"> Politique de Confidentialité |</a></li>
-                        <li class="m-2 lg:text-lg text-md font-bold"><a href="#" class="text-footer-text hover:text-pink-watermelon"> Politique des Cookies |</a></li>
-                        <li class="m-2 lg:text-lg text-md font-bold"><a href="#" class="text-footer-text hover:text-pink-watermelon"> Gestion des Cookies </a></li>
+                    <ul class="flex flex-row gap-1">
+                        <li class="footer-subtitle-mentions"><a href="{{path ('app_legal_notice') }}" class="footer-link-mentions"> Mentions Légales</a></li>
+                        <li class="footer-subtitle-mentions"><a href="{{path ('app_confidentiality_policy') }}" class="footer-link-mentions"> Politique de Confidentialité</a></li>
+                        <li class="footer-subtitle-mentions"><a href="#" class="footer-link-mentions"> Politique des Cookies</a></li>
+                        <li class="footer-subtitle-mentions"><a href="#" class="footer-link-mentions"> Gestion des Cookies </a></li>
                     </ul>
-                    <p class="font-bold text-footer-text">&copy; 2025 - Matcha Bloom - 
+                    <p class="font-bold text-footer-text lg:text-lg text-sm">&copy; 2025 - Matcha Bloom - 
                     Site créé par Jessica Troilo 
                     <a href="https://www.linkedin.com/in/jessica-troilo-dev/"  target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://github.com/jessicatroilo"  target="_blank" ><i class="fa-brands fa-github"></i></a>
@@ -136,5 +154,10 @@
                 </div>
             </div>
         </footer>
+        <!-- JS, Encore -->
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
     </body>
 </html>
