@@ -14,11 +14,13 @@ module.exports = {
       'pink-watermelon': '#FF6B95',
       'text': '#464242',
       'footer-text': '#FFF8E2',
+      'btn-light': '#FFFAFA',
     },
     
     extend: {
       backgroundImage: {
         'footer': "url('/public/images/footer-bg.avif'), url('/public/images/footer-bg.webp'), url('/public/images/footer-bg.svg')",
+        'hero' : "url('/public/images/accueil-hero-bg.avif'), url('/public/images/accueil-hero-bg.webp'), url('/public/images/accueil-hero-bg.svg')",
       },
     },
   },

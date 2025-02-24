@@ -22,21 +22,21 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body class="flex flex-col min-h-screen">
+    <body class="flex flex-col min-h-screen relative">
         <!-- HEADER, NAV -->
         <header role="banner">
             <nav>
                 <div role="navigation">
-                    <div class="flex flex-row-reverse items-center justify-between max-w-screen-xl w-full p-4 mx-auto">
+                    <div class="flex flex-row-reverse items-center justify-end max-w-screen-xl w-full p-4 mx-auto">
                         <!-- RECHERCHE - button -->
-                        <div class="flex items-center">
+                        <div class="flex items-center ms-32">
                             <button id="search-menu" aria-label="Bouton de recherche du site">
                                 <span class="sr-only">Ouvrir la barre de recherche</span> 
                                 <i id="icon-search"class="fa-solid fa-magnifying-glass text-2xl text-matcha-accent"></i>    
                             </button>
                         </div>
                         <!-- LOGO ENTREPRISE-->
-                        <div class="flex items-center">
+                        <div class="flex items-center mx-64">
                             <a href="{{ path('app_home')}}" aria-label="Logo Matcha Bloom - Bouton de retour à la page d'accueil">
                             <img src="{{ asset('images/logo-nav.svg') }}" alt="Logo - Matcha Bloom - Tasse verte avec le nom de l'entreprise en dessous" class="w-60 h-20">
                             </a>
@@ -85,7 +85,7 @@
         </header>
 
         <!-- MAIN -->
-        <main role="main" class=" flex flex-grow">
+        <main role="main" class=" flex flex-grow justify-center">
         {% block body %}{% endblock %}
         </main>
 

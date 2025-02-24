@@ -1,15 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Accueil - Matcha Bloom{% endblock %}
 
 {% block body %}
- <ul>
-                <li><a href="{{ path('app_home') }}">Home</a></li>
-                <li><a href="{{ path('app_legal_notice') }}">legal</a></li>
-                <li><a href="{{ path('app_contact') }}">Contact</a></li>
-                <li><a href="{{ path('app_confidentiality_policy') }}">Policy</a></li>
-                <li><a href="{{ path('app_salon_tea') }}">Salon</a></li>
-                <li><a href="{{ path('app_menu') }}">Menu</a></li>
-                <li><a href="{{ path('app_gallery') }}">Gallery</a></li>
-            </ul>
+<!--Section Hero -->
+<section class="flex justify-center bg-hero bg-footer-text w-full min-h-screen bg-cover top-0">
+    <div class="flex flex-col justify-center items-center gap-10 mb-64">
+        <h1 class="text-text font-bold lg:text-5xl text-2xl">Savourez l'instant, infusé avec passion</h1>
+        <button class="text-btn-light font-bold text-2xl p-4 bg-pink-watermelon hover:bg-matcha-accent hover:text-grey-lavender rounded-xl">Découvrir notre carte</button>
+    </div>
+</section>
+<!-- History Salon -->
+<!-- Section Product -->
+<!-- Google Avis -->
 {% endblock %}
