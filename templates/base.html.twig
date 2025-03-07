@@ -25,20 +25,26 @@
     <body class="flex flex-col min-h-screen relative">
         <!-- HEADER, NAV -->
         <header role="banner">
-            <nav>
+            <nav role="navigation">
                 <div role="navigation">
                     <div class="flex flex-row-reverse items-center justify-end max-w-screen-xl w-full p-4 mx-auto">
                         <!-- RECHERCHE - button -->
-                        <div class="flex items-center ms-32">
+                        <div class="flex items-center lg:ms-32">
                             <button id="search-menu" aria-label="Bouton de recherche du site">
                                 <span class="sr-only">Ouvrir la barre de recherche</span> 
                                 <i id="icon-search"class="fa-solid fa-magnifying-glass text-2xl text-matcha-accent"></i>    
                             </button>
                         </div>
                         <!-- LOGO ENTREPRISE-->
-                        <div class="flex items-center mx-64">
+                        <div class="flex items-center lg:mx-64 mx-16">
                             <a href="{{ path('app_home')}}" aria-label="Logo Matcha Bloom - Bouton de retour à la page d'accueil">
-                            <img src="{{ asset('images/logo-nav.svg') }}" alt="Logo - Matcha Bloom - Tasse verte avec le nom de l'entreprise en dessous" class="w-60 h-20">
+                            <img src="{{ asset('images/logo-nav.svg') }}" 
+                                srcset="{{ asset('images/logo-nav.svg') }} 600w, 
+                                        {{ asset('images/logo-nav.svg') }} 1200w, 
+                                        {{ asset('images/logo-nav.svg') }} 2000w"
+                                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+                                class="w-full object-cover" 
+                                alt="Logo - Matcha Bloom - Tasse verte avec le nom de l'entreprise en dessous" class="w-60 h-20">
                             </a>
                         </div>
                         <!-- NAVIGATION DESKTOP -->
@@ -85,12 +91,12 @@
         </header>
 
         <!-- MAIN -->
-        <main role="main" class=" flex flex-grow justify-center">
+        <main role="main" class=" flex flex-grow justify-center w-full">
         {% block body %}{% endblock %}
         </main>
 
         <!-- FOOTER -->
-        <footer role="contentinfo" class="mt-auto flex flex-none bg-footer bg-matcha-accent lg:bg-center bg-cover">
+        <footer role="contentinfo" class="mt-auto flex flex-none bg-footer bg-matcha-accent lg:bg-center lg:bg-cover bg-fill">
             <div role="navigation" class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center justify-center flex-col">
                 <div class= "flex justify-between lg:flex-row flex-col-reverse m-4 gap-8 w-full">
                     <!-- A PROPOS -->
