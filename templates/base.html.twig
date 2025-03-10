@@ -24,7 +24,6 @@
         <!-- JS, Encore -->
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <body class="flex flex-col min-h-screen relative">
@@ -114,7 +113,7 @@
                         </ul>
                     </div>
                     <!-- LOGO ENTREPRISE -->
-                    <div class="flex lg:justify-end lg:items-end justify-center w-full mt-32">
+                    <div class="flex lg:justify-end lg:items-end justify-center w-full lg:mt-32">
                         <img src="{{ asset('images/logo-footer-light.webp') }}" alt="Logo - Matcha Bloom"  class="lg:h-40 w-auto h-24" >
                     </div>
                     <!-- SOCIAL MEDIA -->
@@ -122,27 +121,27 @@
                         <h4 class="footer-title"> Réseaux sociaux </h4>
                         <ul class="flex flex-row"> 
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Facebook" class="footer-link-social">
+                                <a href="http://facebook.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Facebook" class="footer-link-social">
                                     <i class="fa-brands fa-facebook"></i>
                                 </a>
                             </li>
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Twitter" class="footer-link-social"> 
+                                <a href="http://x.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Twitter" class="footer-link-social"> 
                                     <i class="fa-brands fa-x-twitter"></i>
                                 </a>
                             </li>
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Linkedin" class="footer-link-social">
+                                <a href="http://linkedin.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Linkedin" class="footer-link-social">
                                     <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </li>
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Instagram" class="footer-link-social">
+                                <a href="http://instagram.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Instagram" class="footer-link-social">
                                     <i class="fa-brands fa-instagram"></i>
                                 </a>
                             </li>
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Youtube" class="footer-link-social">
+                                <a href="http://youtube.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Youtube" class="footer-link-social">
                                     <i class="fa-brands fa-youtube"></i>
                                 </a>
                             </li>

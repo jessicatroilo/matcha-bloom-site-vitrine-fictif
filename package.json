@@ -2,6 +2,8 @@
     "devDependencies": {
         "@babel/core": "^7.17.0",
         "@babel/preset-env": "^7.16.0",
+        "@hotwired/turbo": "^7.1.1 || ^8.0",
+        "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/assets",
         "@symfony/webpack-encore": "^5.0.0",
         "autoprefixer": "^10.4.20",
         "core-js": "^3.38.0",
