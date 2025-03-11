@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Matcha Latte",
+        "description": "Un délicieux thé matcha mélangé avec du lait pour une texture onctueuse et réconfortante.",
+        "image": "/images/product-matcha-latte.svg",
+        "classe_css": "bg-pink-watermelon"
+    },
+
+    {
+        "id": 2,
+        "name": "Matcha Donuts",
+        "description": "Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.",
+        "image": "/images/product-matcha-donuts.svg",
+        "classe_css": "bg-matcha-accent"
+    },
+
+    {
+        "id": 3,
+        "name": "Matcha Fraise",
+        "description": "Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.",
+        "image": "/images/product-matcha-fraise.svg",
+        "classe_css": "bg-yellow-sun-dark"
+    },
+
+    {
+        "id": 4,
+        "name": "Matcha Cookies",
+        "description": "Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.",
+        "image": "/images/product-matcha-cookies.svg",
+        "classe_css": "bg-grey-lavender-dark"
+    },
+
+    {
+        "id": 5,
+        "name": "Matcha Original",
+        "description": "Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.",
+        "image": "/images/product-matcha-origin.svg",
+        "classe_css": "bg-matcha-accent"
+    },
+
+    {
+        "id": 6,
+        "name": "Matcha Cocktail",
+        "description": "Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.",
+        "image": "/images/product-matcha-cocktail.svg",
+        "classe_css": "bg-grey-lavender-dark"
+    },
+
+    {
+        "id": 7,
+        "name": "Matcha Cheesecake",
+        "description": "Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.",
+        "image": "/images/product-matcha-cheesecake.svg",
+        "classe_css": "bg-pink-watermelon"
+    },
+
+    {
+        "id": 8,
+        "name": "Matcha Rolls",
+        "description": "Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.",
+        "image": "/images/product-matcha-rolls.svg",
+        "classe_css": "bg-yellow-sun-dark"
+    }
+]

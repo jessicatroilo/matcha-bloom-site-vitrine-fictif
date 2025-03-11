@@ -66,109 +66,20 @@
         <div class="flex flex-col justify-center items-center lg:mx-10 mx-5 gap-5 lg:py-10 py-5">
             <h2 class="text-matcha font-bold lg:text-4xl text-2xl mb-4">Produits populaires</h2>
             <div class="flex flex-wrap flex-row justify-center">
-                <!-- Product 1 -->
-                <div class="product-container group">
-                    <img src="{{ asset('images/product-matcha-latte.svg') }}" 
-                        alt="Tasse de thé matcha avec du lait" 
-                        class="product-img group-hover:scale-150">
-                    <h3 class="product-title group-hover:hidden">Matcha Latte</h3>
-                    <!-- Overlay qui apparaît au survol -->
-                    <div class="absolute inset-0 text-text-light bg-pink-watermelon bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 duration-300">
-                        <h3 class="product-subtitle">Matcha Latte</h3>
-                        <p class="product-desc">Un délicieux thé matcha mélangé avec du lait pour une texture onctueuse et réconfortante.</p>
+                <!-- List of popular Products -->
+                {% for product in products %}
+                    <div class="product-container group">
+                        <img src={{ product.image }} 
+                            alt="Tasse de thé matcha avec du lait" 
+                            class="product-img group-hover:scale-150">
+                        <h3 class="product-title group-hover:hidden">{{ product.name }}</h3>
+                        <!-- Overlay qui apparaît au survol -->
+                        <div class="absolute inset-0 text-text-light bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 duration-300 {{ product.classe_css }}" >
+                            <h3 class="product-subtitle">{{ product.name }}</h3>
+                            <p class="product-desc">{{ product.description }}.</p>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="product-container group">
-                    <img src="{{ asset('images/product-matcha-donuts.svg') }}" 
-                        alt="Assiette de donuts au matcha" 
-                        class="product-img group-hover:scale-150">
-                    <h3 class="product-title group-hover:hidden">Matcha Donuts</h3>
-                    <!-- Overlay qui apparaît au survol -->
-                    <div class="absolute inset-0 text-text-light bg-matcha-accent bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h4 class="product-subtitle">Matcha Donuts</h4>
-                        <p class="product-desc">Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.</p>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-container group">
-                    <img src="{{ asset('images/product-matcha-fraise.svg') }}" 
-                        alt="Tasse de thé matcha avec du lait et de la fraise" 
-                        class="product-img group-hover:scale-150">
-                    <h3 class="product-title group-hover:hidden">Matcha Fraise</h3>
-                    <!-- Overlay qui apparaît au survol -->
-                    <div class="absolute inset-0 text-text-light bg-yellow-sun-dark bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h4 class="product-subtitle">Matcha Fraise</h4>
-                        <p class="product-desc">Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.</p>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-container group">
-                    <img src="{{ asset('images/product-matcha-cookies.svg') }}" 
-                        alt="Assiette de cookies au matcha" 
-                        class="product-img group-hover:scale-150">
-                    <h3 class="product-title group-hover:hidden">Matcha Cookies</h3>
-                    <!-- Overlay qui apparaît au survol -->
-                    <div class="absolute inset-0 text-text-light bg-grey-lavender-dark bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h4 class="product-subtitle">Matcha Cookies</h4>
-                        <p class="product-desc">Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.</p>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="product-container group">
-                    <img src="{{ asset('images/product-matcha-origin.svg') }}" 
-                        alt="Tasse de thé matcha recette original" 
-                        class="product-img group-hover:scale-150">
-                    <h3 class="product-title group-hover:hidden">Matcha Original</h3>
-                    <!-- Overlay qui apparaît au survol -->
-                    <div class="absolute inset-0 text-text-light bg-matcha-accent bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h4 class="product-subtitle">Matcha Original</h4>
-                        <p class="product-desc">Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.</p>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="product-container group">
-                    <img src="{{ asset('images/product-matcha-cocktail.svg') }}" 
-                        alt="Verre de cocktail au matcha" 
-                        class="product-img group-hover:scale-150">
-                    <h3 class="product-title group-hover:hidden">Matcha Cocktail</h3>
-                    <!-- Overlay qui apparaît au survol -->
-                    <div class="absolute inset-0 text-text-light bg-grey-lavender-dark bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h4 class="product-subtitle">Matcha Cocktail</h4>
-                        <p class="product-desc">Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.</p>
-                    </div>
-                </div>
-
-                <!-- Product 7 -->
-                <div class="product-container group">
-                    <img src="{{ asset('images/product-matcha-cheesecake.svg') }}" 
-                        alt="Assiette de cheesecake au matcha" 
-                        class="product-img group-hover:scale-150">
-                    <h3 class="product-title group-hover:hidden">Matcha Cheesecake</h3>
-                    <!-- Overlay qui apparaît au survol -->
-                    <div class="absolute inset-0 text-text-light bg-pink-watermelon bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h4 class="product-subtitle">Matcha Cheesecake</h4>
-                        <p class="product-desc">Un délicieux thé matcha mélangé avec du lait pour une texture onctueuse et réconfortante.</p>
-                    </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="product-container group">
-                    <img src="{{ asset('images/product-matcha-rolls.svg') }}" 
-                        alt="Assieste de rolls au matcha" 
-                        class="product-img group-hover:scale-150">
-                    <h3 class="product-title group-hover:hidden">Matcha Rolls</h3>
-                    <!-- Overlay qui apparaît au survol -->
-                    <div class="absolute inset-0 text-text-light bg-yellow-sun-dark bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="product-subtitle">Matcha Rolls</h3>
-                        <p class="product-desc">Boba fair trade steep kombucha gyokuro teacup scented kukicha lychee sachet brew orange pekoe scented turmeric energy.</p>
-                    </div>
-                </div>
+                {% endfor %}    
             </div>
         </div>
     </section>
