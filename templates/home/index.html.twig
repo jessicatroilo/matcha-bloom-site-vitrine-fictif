@@ -172,5 +172,51 @@
             </div>
         </div>
     </section>
+
+<!-- Section Avis Google --> <!-- TODO utiliser API Google si site existant -->
+    <section class="my-12">
+        <div class="mx-6">
+            <div class="flex flex-col justify-center items-center lg:mx-10 mx-5 lg:py-6 py-3">
+                <h2 class="text-matcha font-bold lg:text-4xl text-2xl text-center">Nos clients parlent de nous</h2>
+                <img src="{{ asset('images/logo-google-avis.png') }}" 
+                    alt="Avis Google Matcha Bloom" 
+                    class="w-72 h-auto object-fill rounded-lg">
+            </div>
+            <div class="flex lg:flex-row flex-col lg:gap-5 gap-3">
+                <div class="flex flex-col justify-center items-center lg:w-1/2 w-full p-5 rounded-lg shadow-xl">
+                    <div class="flex flex-row justify-center items-center gap-1 my-2 text-yellow-sun shadow-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-text lg:text-xl text-lg text-center">
+                        "Un salon de thé chaleureux et accueillant, où l'on peut déguster des thés de qualité et des pâtisseries délicieuses. 
+                        J'ai passé un excellent moment, je recommande vivement !"
+                    </p>
+                    <p class="text-text lg:text-xl text-lg text-center mt-5">
+                        - Alice, cliente fidèle
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center items-center lg:w-1/2 w-full p-5 rounded-lg shadow-xl mt-5">
+                    <div class="flex flex-row justify-center items-center gap-1 my-2 text-yellow-sun shadow-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-text lg:text-xl text-lg text-center">
+                        "Un salon de thé cozy et agréable, le matcha est de qualité et les pâtisseries sont délicieuses.
+                        Je recommande vivement cet endroit pour un moment de détente et de gourmandise."
+                    </p>
+                    <p class="text-text lg:text-xl text-lg text-center mt-5">
+                        - Jeanne, cliente fidèle
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 {% endblock %}
