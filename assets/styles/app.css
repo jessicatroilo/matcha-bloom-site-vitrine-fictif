@@ -52,5 +52,29 @@ body {
         @apply m-2 lg:text-lg text-sm font-bold;
     }
 
+    /* Accueil - Product */
+    .product-container {
+        @apply relative flex flex-col justify-center items-center overflow-hidden rounded-lg;
+    }
+
+    .product-img {
+        @apply w-96 h-96 object-cover rounded-lg transform transition-transform duration-300;
+    }
+
+    .product-title {
+        @apply font-bold text-2xl;
+    }
+
+    .product-subtitle {
+        @apply font-bold lg:text-4xl text-2xl mb-2;
+    }
+
+    .product-desc {
+        @apply lg:text-xl text-lg px-4;
+    }
+
+    .product[data-type='matcha'] {
+        @apply bg-matcha;
+    }
 
 }

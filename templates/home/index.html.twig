@@ -1,15 +1,133 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Accueil - Matcha Bloom{% endblock %}
 
 {% block body %}
- <ul>
-                <li><a href="{{ path('app_home') }}">Home</a></li>
-                <li><a href="{{ path('app_legal_notice') }}">legal</a></li>
-                <li><a href="{{ path('app_contact') }}">Contact</a></li>
-                <li><a href="{{ path('app_confidentiality_policy') }}">Policy</a></li>
-                <li><a href="{{ path('app_salon_tea') }}">Salon</a></li>
-                <li><a href="{{ path('app_menu') }}">Menu</a></li>
-                <li><a href="{{ path('app_gallery') }}">Gallery</a></li>
-            </ul>
+<!--Section Hero -->
+<div class="flex flex-col w-full max-w-full min-h-screen">
+    <section class="flex justify-center bg-hero bg-footer-text min-h-screen lg:bg-cover bg-fill bg-no-repeat bg-w-full bg-center top-0 relative">
+        <div class="flex flex-col justify-center items-center flex-wrap gap-10 mb-64">
+            <h1 class="text-text text-center font-bold lg:text-5xl text-2xl">Savourez l'instant, infusé avec passion</h1>
+            <a href="{{ path('app_menu') }}" aria-label="Bouton pour aller à la page du menu du restaurant" class="text-btn-light font-bold lg:text-2xl text-lg lg:p-4 p-2 bg-pink-watermelon hover:bg-matcha-accent hover:text-grey-lavender rounded-xl">Découvrir notre carte</a>
+        </div>
+    </section>
+    <!-- History Salon -->
+    <section class="flex flex-col justify-center items-center lg:mx-10 lg:my-12 mx-5 my-6 gap-5 lg:py-10 py-5">
+        <h2 class="text-matcha font-bold lg:text-4xl text-2xl lg:mb-12 mb-6">Notre histoire</h2>
+        <div class="flex flex-row">
+            <div class="grid lg:grid-cols-4 grid-cols-2 gap-3 h-auto items-start">
+                <!-- Image 1 : Grande image à gauche -->
+                <img src="{{ asset('images/green-matcha-tea-cup.webp') }}" 
+                    alt="Intérieur du salon de thé Matcha Bloom" 
+                    class="w-full h-full object-fill rounded-lg col-span-1 row-span-2">
+
+                <!-- Colonne de droite avec deux images empilées -->
+                <div class="grid grid-rows-1 gap-8">
+                    <img src="{{ asset('images/person-green-matcha-tea-cup.webp') }}" 
+                        alt="Détail tasse matcha" 
+                        class="w-full h-full object-cover rounded-lg">
+                    <img src="{{ asset('images/person-green-matcha-tea-cup.webp') }}" 
+                        alt="Détail tasse matcha" 
+                        class="w-full h-full object-cover rounded-lg">
+                </div>
+                <!-- Paragraphe à droite -->
+                <div class="col-span-2 lg:mx-7 mx-3 gap-4">
+                    <p class="text-text lg:text-xl text-lg leading-relaxed">
+                        Découvrez notre salon de thé Matcha Bloom, un lieu chaleureux où déguster 
+                        des thés raffinés et savourer des instants de détente en toute sérénité. 
+                    </p>
+                    <p class="text-text lg:text-xl text-lg leading-relaxed">
+                        Tea garden yerba maté tea kettle loose leaf tea garden oolong antioxidant 
+                        tea garden darjeeling rize tea time hot steep earl grey nepal. Focus teapot 
+                        shrub latte iced nilgiri zen matcha guayusa aromatic taro yerba maté focus green oolong. 
+                        Brew shoumei lemongrass blend sachet gaiwan hojicha tea time antioxidant antioxidant baihao 
+                        yinzhen scented turmeric lychee. Shrub keemun baihao yinzhen energy taro boba iced caffeine shrub bai mudan. 
+                        Masala chai kombucha infuser rooibos boba boba tea zen antioxidant green masala chai theanine ginger.
+                    </p>
+                    <p class="text-text lg:text-xl text-lg leading-relaxed my-4">
+                        Energy hojicha shincha catechin camellia sinensis zen rooibos london fog herbal lapsang souchong 
+                        teacup yixing rize energy. Bamboo whisk guayusa blend teacup tea kettle pearl milk genmai jasmine 
+                        chamomile loose leaf herbal teahouse london fog. Kombucha irish breakfast kukicha loose leaf fair 
+                        trade scented yixing sachet sachet black fermentation.
+                        Brew shoumei lemongrass blend sachet gaiwan hojicha tea time antioxidant antioxidant baihao 
+                        yinzhen scented turmeric lychee. Shrub keemun baihao yinzhen energy taro boba iced caffeine shrub bai mudan.   
+                    </p>
+                    <div class="my-7 flex lg:justify-start justify-center">
+                        <a href="{{ path('app_salon_tea') }}" aria-label="Bouton pour aller à la page de l'histoire du salon Matcha Bloom" class="text-matcha-accent font-bold lg:text-xl text-md lg:p-4 p-2 border border-1 border-matcha-accent hover:border-none hover:border-0 hover:bg-matcha-accent hover:text-btn-light rounded-xl">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Section Product --> 
+<!-- TODO à voir pour le back-office sans bdd -->
+    <section class="my-12">
+        <div class="flex flex-col justify-center items-center lg:mx-10 mx-5 gap-5 lg:py-10 py-5">
+            <h2 class="text-matcha font-bold lg:text-4xl text-2xl mb-4">Produits populaires</h2>
+            <div class="flex flex-wrap flex-row justify-center">
+                <!-- List of popular Products -->
+                {% for product in products %}
+                    <div class="product-container group">
+                        <img src={{ product.image }} 
+                            alt="Tasse de thé matcha avec du lait" 
+                            class="product-img group-hover:scale-150">
+                        <h3 class="product-title group-hover:hidden">{{ product.name }}</h3>
+                        <!-- Overlay qui apparaît au survol -->
+                        <div class="absolute inset-0 text-text-light bg-opacity-90 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 duration-300 {{ product.classe_css }}" >
+                            <h3 class="product-subtitle">{{ product.name }}</h3>
+                            <p class="product-desc">{{ product.description }}.</p>
+                        </div>
+                    </div>
+                {% endfor %}    
+            </div>
+        </div>
+    </section>
+
+<!-- Section Avis Google --> <!-- TODO utiliser API Google si site existant -->
+    <section class="my-12">
+        <div class="mx-6">
+            <div class="flex flex-col justify-center items-center lg:mx-10 mx-5 lg:py-6 py-3">
+                <h2 class="text-matcha font-bold lg:text-4xl text-2xl text-center">Nos clients parlent de nous</h2>
+                <img src="{{ asset('images/logo-google-avis.png') }}" 
+                    alt="Avis Google Matcha Bloom" 
+                    class="w-72 h-auto object-fill rounded-lg">
+            </div>
+            <div class="flex lg:flex-row flex-col lg:gap-5 gap-3">
+                <div class="flex flex-col justify-center items-center lg:w-1/2 w-full p-5 rounded-lg shadow-xl">
+                    <div class="flex flex-row justify-center items-center gap-1 my-2 text-yellow-sun shadow-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-text lg:text-xl text-lg text-center">
+                        "Un salon de thé chaleureux et accueillant, où l'on peut déguster des thés de qualité et des pâtisseries délicieuses. 
+                        J'ai passé un excellent moment, je recommande vivement !"
+                    </p>
+                    <p class="text-text lg:text-xl text-lg text-center mt-5">
+                        - Alice, cliente fidèle
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center items-center lg:w-1/2 w-full p-5 rounded-lg shadow-xl mt-5">
+                    <div class="flex flex-row justify-center items-center gap-1 my-2 text-yellow-sun shadow-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-text lg:text-xl text-lg text-center">
+                        "Un salon de thé cozy et agréable, le matcha est de qualité et les pâtisseries sont délicieuses.
+                        Je recommande vivement cet endroit pour un moment de détente et de gourmandise."
+                    </p>
+                    <p class="text-text lg:text-xl text-lg text-center mt-5">
+                        - Jeanne, cliente fidèle
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 {% endblock %}

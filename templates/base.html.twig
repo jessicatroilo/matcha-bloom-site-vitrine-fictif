@@ -12,8 +12,7 @@
         <link rel="shortcut icon" href="{{ asset('images/salon-icon.svg') }}" type="image/x-icon" alt="Logo de l'entreprise">
 
         <!-- IMG -->
-        <link rel="preload" href="/public/images/footer-bg.avif" as="image">
-        <link rel="preload" href="/public/images/footer-bg.svg" as="image">
+        
         <!-- FONT AWESOME, Icons -->
         <script src="https://kit.fontawesome.com/275e06ef04.js" crossorigin="anonymous"></script>
 
@@ -21,31 +20,42 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
+
+        <!-- JS, Encore -->
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </head>
-    <body class="flex flex-col min-h-screen">
+    <body class="flex flex-col min-h-screen relative">
         <!-- HEADER, NAV -->
         <header role="banner">
-            <nav>
+            <nav role="navigation">
                 <div role="navigation">
-                    <div class="flex flex-row-reverse items-center justify-between max-w-screen-xl w-full p-4 mx-auto">
+                    <div class="flex flex-row-reverse items-center justify-end max-w-screen-xl w-full p-4 mx-auto">
                         <!-- RECHERCHE - button -->
-                        <div class="flex items-center">
+                        <div class="flex items-center lg:ms-32">
                             <button id="search-menu" aria-label="Bouton de recherche du site">
                                 <span class="sr-only">Ouvrir la barre de recherche</span> 
                                 <i id="icon-search"class="fa-solid fa-magnifying-glass text-2xl text-matcha-accent"></i>    
                             </button>
                         </div>
                         <!-- LOGO ENTREPRISE-->
-                        <div class="flex items-center">
+                        <div class="flex items-center lg:mx-64 mx-16">
                             <a href="{{ path('app_home')}}" aria-label="Logo Matcha Bloom - Bouton de retour à la page d'accueil">
-                            <img src="{{ asset('images/logo-nav.svg') }}" alt="Logo - Matcha Bloom - Tasse verte avec le nom de l'entreprise en dessous" class="w-60 h-20">
+                            <img src="{{ asset('images/logo-navbar.webp') }}" 
+                                srcset="{{ asset('images/logo-navbar.webp') }} 600w, 
+                                        {{ asset('images/logo-navbar.webp') }} 1200w, 
+                                        {{ asset('images/logo-navbar.webp') }} 2000w"
+                                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+                                class="w-full object-cover" 
+                                alt="Logo - Matcha Bloom - Tasse verte avec le nom de l'entreprise en dessous" class="w-60 h-20">
                             </a>
                         </div>
                         <!-- NAVIGATION DESKTOP -->
                         <div class="hidden md:flex space-x-4">
-                            <a href="{{path ('app_salon_tea') }}" class="navbar-title" > Salon</a>                              
-                            <a href="{{path ('app_menu') }}" class="navbar-title">Menu</a>
-                            <a href="{{path ('app_gallery') }}" class="navbar-title">Gallerie</a>
+                            <a href="{{ path('app_salon_tea') }}" class="navbar-title" > Salon</a>                              
+                            <a href="{{ path('app_menu') }}" class="navbar-title">Menu</a>
+                            <a href="{{ path('app_gallery') }}" class="navbar-title">Gallerie</a>
                         </div>
                         <!-- NAVIGATION MOBILE - menu button -->
                         <div class="md:hidden flex items-center">
@@ -85,12 +95,12 @@
         </header>
 
         <!-- MAIN -->
-        <main role="main" class=" flex flex-grow">
+        <main role="main" class=" flex flex-grow justify-center w-full">
         {% block body %}{% endblock %}
         </main>
 
         <!-- FOOTER -->
-        <footer role="contentinfo" class="mt-auto bg-footer bg-matcha-accent lg:bg-center bg-cover">
+        <footer role="contentinfo" class="mt-auto flex flex-none bg-footer bg-matcha-accent lg:bg-center lg:bg-cover bg-fill">
             <div role="navigation" class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center justify-center flex-col">
                 <div class= "flex justify-between lg:flex-row flex-col-reverse m-4 gap-8 w-full">
                     <!-- A PROPOS -->
@@ -103,35 +113,35 @@
                         </ul>
                     </div>
                     <!-- LOGO ENTREPRISE -->
-                    <div class="flex lg:justify-end justify-center w-full">
-                        <img src="{{ asset('images/footer-logo.svg') }}" alt="Logo - Matcha Bloom"  class="lg:w-96 lg:h-96 w-64 h-64" >
+                    <div class="flex lg:justify-end lg:items-end justify-center w-full lg:mt-32">
+                        <img src="{{ asset('images/logo-footer-light.webp') }}" alt="Logo - Matcha Bloom"  class="lg:h-40 w-auto h-24" >
                     </div>
                     <!-- SOCIAL MEDIA -->
                     <div class="flex flex-col items-center w-full">
                         <h4 class="footer-title"> Réseaux sociaux </h4>
                         <ul class="flex flex-row"> 
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Facebook" class="footer-link-social">
+                                <a href="http://facebook.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Facebook" class="footer-link-social">
                                     <i class="fa-brands fa-facebook"></i>
                                 </a>
                             </li>
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Twitter" class="footer-link-social"> 
+                                <a href="http://x.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Twitter" class="footer-link-social"> 
                                     <i class="fa-brands fa-x-twitter"></i>
                                 </a>
                             </li>
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Linkedin" class="footer-link-social">
+                                <a href="http://linkedin.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Linkedin" class="footer-link-social">
                                     <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </li>
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Instagram" class="footer-link-social">
+                                <a href="http://instagram.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Instagram" class="footer-link-social">
                                     <i class="fa-brands fa-instagram"></i>
                                 </a>
                             </li>
                             <li class="footer-subtitle-social">
-                                <a href="#" target="_blank" aria-label="Icône cliquable pour aller sur notre page Youtube" class="footer-link-social">
+                                <a href="http://youtube.com" target="_blank" aria-label="Icône cliquable pour aller sur notre page Youtube" class="footer-link-social">
                                     <i class="fa-brands fa-youtube"></i>
                                 </a>
                             </li>
@@ -154,10 +164,6 @@
                 </div>
             </div>
         </footer>
-        <!-- JS, Encore -->
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+       
     </body>
 </html>
