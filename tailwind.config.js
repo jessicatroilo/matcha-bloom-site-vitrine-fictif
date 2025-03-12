@@ -27,6 +27,7 @@ module.exports = {
         //'hero' : "url('/public/images/accueil-hero-bg.avif'), url('/public/images/accueil-hero-bg.webp'), url('/public/images/accueil-hero-bg.svg')",
         'footer' : "url('/public/images/footer-bg.webp')",
         'hero' : "url('/public/images/accueil-bg-hero.webp')",
+        'all-pages' : "url('/public/images/all-page-bg.webp')",
       },
     },
   },
