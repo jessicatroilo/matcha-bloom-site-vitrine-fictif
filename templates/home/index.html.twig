@@ -13,7 +13,7 @@
     </section>
     <!-- History Salon -->
     <section class="flex flex-col justify-center items-center lg:mx-10 lg:my-12 mx-5 my-6 gap-5 lg:py-10 py-5">
-        <h2 class="text-matcha font-bold lg:text-4xl text-2xl lg:mb-12 mb-6">Notre histoire</h2>
+        <h2 class="text-matcha-accent font-bold lg:text-4xl text-2xl lg:mb-12 mb-6">Notre histoire</h2>
         <div class="flex flex-row">
             <div class="grid lg:grid-cols-4 grid-cols-2 gap-3 h-auto items-start">
                 <!-- Image 1 : Grande image à gauche -->
@@ -66,7 +66,7 @@
 <!-- TODO à voir pour le back-office sans bdd -->
     <section class="my-12">
         <div class="flex flex-col justify-center items-center lg:mx-10 mx-5 gap-5 lg:py-10 py-5">
-            <h2 class="text-matcha font-bold lg:text-4xl text-2xl mb-4">Produits populaires</h2>
+            <h2 class="text-matcha-accent font-bold lg:text-4xl text-2xl mb-4">Produits populaires</h2>
             <div class="flex flex-wrap flex-row justify-center">
                 <!-- List of popular Products -->
                 {% for product in products %}
@@ -90,7 +90,7 @@
     <section class="my-12">
         <div class="mx-6">
             <div class="flex flex-col justify-center items-center lg:mx-10 mx-5 lg:py-6 py-3">
-                <h2 class="text-matcha font-bold lg:text-4xl text-2xl text-center">Nos clients parlent de nous</h2>
+                <h2 class="text-matcha-accent font-bold lg:text-4xl text-2xl text-center">Nos clients parlent de nous</h2>
                 <img src="{{ asset('images/logo-google-avis.png') }}" 
                     alt="Avis Google Matcha Bloom" 
                     class="w-72 h-auto object-fill rounded-lg">
