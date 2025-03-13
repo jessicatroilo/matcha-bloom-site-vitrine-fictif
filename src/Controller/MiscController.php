@@ -13,7 +13,7 @@ final class MiscController extends AbstractController
     public function legalNotice(): Response
     {
         return $this->render('misc/legal-notice.html.twig', [
-            'controller_name' => 'MiscController',
+            
         ]);
     }
 
@@ -21,7 +21,23 @@ final class MiscController extends AbstractController
     public function confidentialityPolicy(): Response
     {
         return $this->render('misc/confidentiality-policy.html.twig', [
-            'controller_name' => 'MiscController',
+            
+        ]);
+    }
+
+    #[Route('politique-de-cookies', name: 'cookies_policy')]
+    public function cookiesPolicy(): Response
+    {
+        return $this->render('misc/cookies-policy.html.twig', [
+            
+        ]);
+    }
+
+    #[Route('gestion-de-cookies', name: 'cookies_gestion')]
+    public function cookiesGestion(): Response
+    {
+        return $this->render('misc/cookies-gestion.html.twig', [
+            
         ]);
     }
 

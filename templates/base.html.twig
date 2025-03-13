@@ -30,65 +30,63 @@
         <!-- HEADER, NAV -->
         <header role="banner">
             <nav role="navigation">
-                <div role="navigation">
-                    <div class="flex flex-row-reverse items-center justify-end max-w-screen-xl w-full p-4 mx-auto">
-                        <!-- RECHERCHE - button -->
-                        <div class="flex items-center lg:ms-32">
-                            <button id="search-menu" aria-label="Bouton de recherche du site">
-                                <span class="sr-only">Ouvrir la barre de recherche</span> 
-                                <i id="icon-search"class="fa-solid fa-magnifying-glass text-2xl text-matcha-accent"></i>    
-                            </button>
-                        </div>
-                        <!-- LOGO ENTREPRISE-->
-                        <div class="flex items-center lg:mx-64 mx-16">
-                            <a href="{{ path('app_home')}}" aria-label="Logo Matcha Bloom - Bouton de retour à la page d'accueil">
-                            <img src="{{ asset('images/logo-navbar.webp') }}" 
-                                srcset="{{ asset('images/logo-navbar.webp') }} 600w, 
-                                        {{ asset('images/logo-navbar.webp') }} 1200w, 
-                                        {{ asset('images/logo-navbar.webp') }} 2000w"
-                                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
-                                class="w-full object-contain" 
-                                alt="Logo - Matcha Bloom - Tasse verte avec le nom de l'entreprise en dessous" class="w-60 h-20">
-                            </a>
-                        </div>
-                        <!-- NAVIGATION DESKTOP -->
-                        <div class="hidden md:flex space-x-4">
-                            <a href="{{ path('app_salon_tea') }}" class="navbar-title" > Salon</a>                              
-                            <a href="{{ path('app_menu') }}" class="navbar-title">Menu</a>
-                            <a href="{{ path('app_gallery') }}" class="navbar-title">Gallerie</a>
-                        </div>
-                        <!-- NAVIGATION MOBILE - menu button -->
-                        <div class="md:hidden flex items-center">
-                            <button id="burger-menu" aria-label="Bouton du menu de navigation du site">
-                            <span class="sr-only">Ouvrir le menu</span> 
-                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                            </button>
-                        </div>
+                <div class="flex flex-row-reverse items-center justify-end max-w-screen-xl w-full p-4 mx-auto">
+                    <!-- RECHERCHE - button -->
+                    <div class="flex items-center lg:ms-32">
+                        <button id="search-menu" aria-label="Bouton de recherche du site">
+                            <span class="sr-only">Ouvrir la barre de recherche</span> 
+                            <i id="icon-search"class="fa-solid fa-magnifying-glass text-2xl text-matcha-accent"></i>    
+                        </button>
                     </div>
-                    <!-- NAVIGATION MOBILE - menu -->
-                    <div id="menu" class="md:hidden hidden px-4 py-6 shadow-lg">
-                        <ul class="flex items-center flex-col gap-4">
-                            <li>
-                                <a href="{{ path('app_salon_tea') }}" class="navbar-burger-title"> Salon</a>        
-                            </li>
-                            <li>
-                                <a href="{{ path('app_menu') }}" class="navbar-burger-title"> Menu</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('app_gallery') }}" class="navbar-burger-title"> Gallerie</a>
-                            </li>
-                        </ul>
+                    <!-- LOGO ENTREPRISE-->
+                    <div class="flex items-center lg:mx-64 mx-16">
+                        <a href="{{ path('app_home')}}" aria-label="Logo Matcha Bloom - Bouton de retour à la page d'accueil">
+                        <img src="{{ asset('images/logo-navbar.webp') }}" 
+                            srcset="{{ asset('images/logo-navbar.webp') }} 600w, 
+                                    {{ asset('images/logo-navbar.webp') }} 1200w, 
+                                    {{ asset('images/logo-navbar.webp') }} 2000w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+                            class="w-full object-contain" 
+                            alt="Logo - Matcha Bloom - Tasse verte avec le nom de l'entreprise en dessous" class="w-60 h-20">
+                        </a>
                     </div>
-                    <!-- RECHERCHE - input -->
-                    <div id="search" class="hidden px-4 lg:px-96 py-6 w-full">
-                        <div class="flex flex-row gap-1">
-                            <input type="search" placeholder="votre recherche..." class="block w-full p-2 text-text bg-white border border-matcha rounded-lg">
-                            <button aria-label="Bouton de recherche" class="search-btn">
-                                <p> Rechercher </p>
-                            </button>
-                        </div>
+                    <!-- NAVIGATION DESKTOP -->
+                    <div class="hidden md:flex space-x-4">
+                        <a href="{{ path('app_salon_tea') }}" class="navbar-title" > Salon</a>                              
+                        <a href="{{ path('app_menu') }}" class="navbar-title">Menu</a>
+                        <a href="{{ path('app_gallery') }}" class="navbar-title">Gallerie</a>
+                    </div>
+                    <!-- NAVIGATION MOBILE - menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="burger-menu" aria-label="Bouton du menu de navigation du site">
+                        <span class="sr-only">Ouvrir le menu</span> 
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- NAVIGATION MOBILE - menu -->
+                <div id="menu" class="md:hidden hidden px-4 py-6 shadow-lg">
+                    <ul class="flex items-center flex-col gap-4">
+                        <li>
+                            <a href="{{ path('app_salon_tea') }}" class="navbar-burger-title"> Salon</a>        
+                        </li>
+                        <li>
+                            <a href="{{ path('app_menu') }}" class="navbar-burger-title"> Menu</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_gallery') }}" class="navbar-burger-title"> Gallerie</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- RECHERCHE - input -->
+                <div id="search" class="hidden px-4 lg:px-96 py-6 w-full">
+                    <div class="flex flex-row gap-1">
+                        <input type="search" placeholder="votre recherche..." class="block w-full p-2 text-text bg-white border border-matcha rounded-lg">
+                        <button aria-label="Bouton de recherche" class="search-btn">
+                            <p> Rechercher </p>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -153,8 +151,8 @@
                     <ul class="flex flex-row gap-1">
                         <li class="footer-subtitle-mentions"><a href="{{path ('app_legal_notice') }}" class="footer-link-mentions"> Mentions Légales</a></li>
                         <li class="footer-subtitle-mentions"><a href="{{path ('app_confidentiality_policy') }}" class="footer-link-mentions"> Politique de Confidentialité</a></li>
-                        <li class="footer-subtitle-mentions"><a href="#" class="footer-link-mentions"> Politique des Cookies</a></li>
-                        <li class="footer-subtitle-mentions"><a href="#" class="footer-link-mentions"> Gestion des Cookies </a></li>
+                        <li class="footer-subtitle-mentions"><a href="{{path ('app_cookies_policy') }}"  class="footer-link-mentions"> Politique des Cookies</a></li>
+                        <li class="footer-subtitle-mentions"><a href="{{path ('app_cookies_gestion') }}"  class="footer-link-mentions"> Gestion des Cookies </a></li>
                     </ul>
                     <p class="font-bold text-footer-text lg:text-lg text-sm">&copy; 2025 - Matcha Bloom - 
                     Site créé par Jessica Troilo 
@@ -164,6 +162,5 @@
                 </div>
             </div>
         </footer>
-       
     </body>
 </html>
