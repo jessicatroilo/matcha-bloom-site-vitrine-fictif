@@ -78,9 +78,17 @@ body {
     .form-input {
         @apply text-lg text-text font-bold w-full outline-matcha-accent border-grey-lavender border-2 rounded shadow-lg px-2;
     }
+    .form-input>option {
+        @apply bg-white text-text appearance-none;
+    }
+
+    .form-input>select {
+        @apply appearance-none;
+    }
+
 
     .form-btn {
-        @apply flex self-stretch lg:self-start justify-center mx-2 lg:mx-0 mt-4 lg:text-lg text-sm font-bold bg-matcha-accent text-white p-2 rounded-lg hover:bg-pink-watermelon;
+        @apply flex self-stretch lg:self-start justify-center cursor-pointer mx-2 lg:mx-0 mt-4 lg:text-lg text-sm font-bold bg-matcha-accent text-white p-2 rounded-lg hover:bg-pink-watermelon;
     }
 
     .form-label {
