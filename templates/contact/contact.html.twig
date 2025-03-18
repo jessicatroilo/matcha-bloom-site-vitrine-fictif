@@ -14,4 +14,18 @@
                 class="w-48 h-auto object-fill">
         </div>
     </section>
+
+    <section>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.message) }}
+        {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+    </section>
+</div>
 {% endblock %}
