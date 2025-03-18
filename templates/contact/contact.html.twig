@@ -15,17 +15,49 @@
         </div>
     </section>
 
+<!-- Flash message -->
     <section>
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success">{{ message }}</div>
-    {% endfor %}
-
-    {{ form_start(form) }}
-        {{ form_row(form.name) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.message) }}
-        {{ form_row(form.submit) }}
-    {{ form_end(form) }}
+        <div class="bg-matcha-accent flex justify-center items-center">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success text-white">{{ message }}</div>
+            {% endfor %}
+        </div>
+        <div class="bg-red-500 flex justify-center items-center">
+            {% for message in app.flashes('error') %}
+                <div class="alert alert-error text-white">{{ message }}</div>
+            {% endfor %}
+        </div>
     </section>
+
+    <!-- Contact form -->
+    <section class="flex flex-col justify-center items-center gap-y-8 my-12">
+        <h3 class="text-matcha-accent font-bold text-2xl">Besoin d'un renseignement ?</h3>
+        <p class="text-text text-xl"> Les champs marqué d'un (<span class="text-pink-watermelon font-bold">*</span>) sont obligatoires</p>
+
+    <div class="flex flex-col">
+    {{ form_start(form, {'attr': {'data-turbo': 'false'}}) }}
+        <div class="px-2 pb-2 lg:mt-2">
+            {{ form_row(form.name) }}
+        </div>
+
+        <div class="px-2 pb-2 lg:mt-2">
+        {{ form_row(form.email) }}
+        </div>
+
+        <div class="px-2 pb-2 lg:mt-2">
+        {{ form_row(form.subject) }}
+        </div>
+
+        <div class="px-2 pb-2 lg:mt-2">
+        {{ form_row(form.message) }}
+        </div>
+
+        <div class="px-2 pb-2 lg:mt-2">
+        {{ form_row(form.submit) }}
+        </div>
+    {{ form_end(form) }}
+    </div>
+    </section>
+
 </div>
 {% endblock %}
