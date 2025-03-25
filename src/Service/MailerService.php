@@ -27,8 +27,8 @@ class MailerService
             } */
 
             $email = (new TemplatedEmail())
-            ->from(new Address('jessica.troilo25@gmail.com', 'Jessica')) // Ajout d'un nom d'expéditeur
-            ->to(new Address('jessica.troilo25@gmail.com'))
+            ->from(new Address('votre-adresse-mail@monemail.fr', 'Votr nom')) // Ajout d'un nom d'expéditeur // ->from($from) pour Gmail mettre son adresse mail
+            ->to(new Address('votre-adresse-mail@monemail.fr'))
             ->replyTo($userEmail) // Permet de répondre directement au visiteur
             ->subject($subject)
             ->htmlTemplate('emails/contact.html.twig') // Fichier Twig à utiliser

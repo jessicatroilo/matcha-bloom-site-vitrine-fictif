@@ -33,9 +33,9 @@ class ContactController extends AbstractController
             try {
             // avec Email()
             /* $mailerService->sendEmail(
-                'jessica.troilo25@gmail.com', // Expéditeur (obligatoire pour Gmail)
+                'votre-adresse-mail@monemail.fr', // Expéditeur (obligatoire pour Gmail)
                // Sinon  $data['email'],  // L'email de l'expéditeur (le visiteur)
-                'jessica.troilo25@gmail.com',  // Ton adresse Gmail
+                'votre-adresse-mail@monemail.fr',  // Ton adresse Gmail
                 "Nouveau message de {$data['name']} - sujet: {$data['subject']}",
                 "Nom: {$data['name']}\nEmail: {$data['email']}\nMessage: {$data['message']}",
                 $data['email'] // Reply-To (permet de répondre au visiteur) (avec Gmail)
