@@ -14,4 +14,66 @@
                 class="w-48 h-auto object-fill">
         </div>
     </section>
+
+<!-- Flash message -->
+    <section>
+        <div class="bg-matcha-accent flex justify-center items-center">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success text-white">{{ message }}</div>
+            {% endfor %}
+        </div>
+        <div class="bg-red-500 flex justify-center items-center">
+            {% for message in app.flashes('error') %}
+                <div class="alert alert-error text-white">{{ message }}</div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Contact form -->
+    <section class="flex flex-col justify-center items-center gap-y-8 my-12">
+        <h3 class="text-matcha-accent font-bold text-2xl">Besoin d'un renseignement ?</h3>
+        <p class="text-text text-xl text-center"> Les champs marqué d'un (<span class="text-pink-watermelon font-bold">*</span>) sont obligatoires</p>
+
+    <div class="flex flex-col">
+    {{ form_start(form, {'attr': {'data-turbo': 'false'}}) }}
+        <div class="px-2 pb-2 lg:mt-2">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+            {% for error in form.name.vars.errors %}
+                <div class="text-pink-watermelon font-bold">{{ error.message }}</div>
+            {% endfor %}
+        </div>
+
+        <div class="px-2 pb-2 lg:mt-2">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+        {% for error in form.email.vars.errors %}
+            <div class="text-pink-watermelon font-bold">{{ error.message }}</div>
+        {% endfor %}
+        </div>
+
+        <div class="px-2 pb-2 lg:mt-2">
+        {{ form_label(form.subject) }}
+        {{ form_widget(form.subject) }}
+        {% for error in form.subject.vars.errors %}
+            <div class="text-pink-watermelon font-bold">{{ error.message }}</div>
+        {% endfor %}
+        </div>
+
+        <div class="px-2 pb-2 lg:mt-2">
+        {{ form_label(form.message) }}
+        {{ form_widget(form.message) }}
+        {% for error in form.message.vars.errors %}
+            <div class="text-pink-watermelon font-bold">{{ error.message }}</div>
+        {% endfor %}
+        </div>
+
+        <div class="px-2 pb-2 lg:mt-2">
+        {{ form_row(form.submit) }}
+        </div>
+    {{ form_end(form) }}
+    </div>
+    </section>
+
+</div>
 {% endblock %}

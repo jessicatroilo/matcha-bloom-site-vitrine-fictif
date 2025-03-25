@@ -10,6 +10,13 @@ module.exports = {
     'hover:bg-yellow-sun-dark',
     'bg-grey-lavender-dark',
     'hover:bg-grey-lavender-dark',
+    'border-yellow-sun-dark',
+    'hover:border-yellow-sun-dark',
+    'text-yellow-sun-dark',
+    'border-grey-lavender-dark',
+    'hover:border-grey-lavender-dark',
+    'border-grey-lavender',
+    'hover:border-grey-lavender',
   ],
   theme: {
     extend: {
