@@ -6,10 +6,15 @@ import './bootstrap.js';
  * which should already be in your base.html.twig.
  */
 import './styles/app.css';
-import '../src/Ressource/js/seach_bar.js';
+import searchBar from '../src/Ressource/js/seach_bar.js';
 import '../src/Ressource/js/burger_menu.js';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  searchBar.init();
+});
 
 /* document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('burger-menu').addEventListener('click', function () {
@@ -18,3 +23,6 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
   });
 });
  */
+
+
+

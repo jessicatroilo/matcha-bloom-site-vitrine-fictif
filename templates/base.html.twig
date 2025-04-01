@@ -83,11 +83,12 @@
                 <!-- RECHERCHE - input -->
                 <div id="search" class="hidden px-4 lg:px-96 py-6 w-full">
                     <div class="flex flex-row gap-1">
-                        <input type="search" placeholder="votre recherche..." class="block w-full p-2 text-text bg-white border border-matcha rounded-lg">
-                        <button aria-label="Bouton de recherche" class="search-btn">
-                            <p> Rechercher </p>
+                        <input id="search-input" type="search" placeholder="votre recherche..." class="block w-full p-2 text-text bg-white border border-matcha rounded-lg">
+                        <!-- A remettre si besoin <button aria-label="Bouton de recherche" class="search-btn"> 
+                            <p> Rechercher </p> -->
                         </button>
                     </div>
+                    <div id="search-results" class="gap-2 text-text font-bold mt-3 px-3 lg:text-xl text-lg"> </div>
                 </div>
             </nav>
         </header>
