@@ -18,4 +18,5 @@ final class HomeController extends AbstractController
             'products' => $productsInHomePage,
         ]);
     }
+
 }
