@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    background-color: footer-text;
+    font-family: 'Poppins', sans-serif; 
+};
+
+
+@layer utilities {
+
+
+    /* Navbar */
+    .navbar-title {
+        @apply text-text font-bold text-2xl hover:text-matcha-accent hover:underline;
+    }
+
+    .navbar-burger-title {
+        @apply block text-text hover:text-matcha-accent text-2xl font-light;
+    }
+
+    .search-btn {
+        @apply block p-2 text-footer-text bg-matcha hover:bg-matcha-accent hover:text-grey-lavender rounded-lg;
+    }
+    /* Footer */
+    .footer-title {
+        @apply lg:text-lg text-base text-footer-text font-bold uppercase mb-3;
+    }
+
+    .footer-subtitle-about {
+        @apply lg:text-xl text-lg mb-2;
+    }
+
+    .footer-link-about {
+        @apply  hover:text-matcha-light text-footer-text hover:underline;
+    }
+
+    .footer-link-social {
+        @apply hover:text-matcha-light text-footer-text;
+    }
+
+    .footer-subtitle-social {
+        @apply m-2 lg:text-4xl text-2xl; 
+    }
+
+    .footer-link-mentions {
+        @apply hover:text-matcha-light text-footer-text hover:underline;
+    }
+
+    .footer-subtitle-mentions {
+        @apply m-2 lg:text-lg text-sm font-bold;
+    }
+
+    /* Accueil - Product */
+    .product-container {
+        @apply relative flex flex-col justify-center items-center overflow-hidden rounded-lg;
+    }
+
+    .product-img {
+        @apply w-96 h-96 object-cover rounded-lg transform transition-transform duration-300;
+    }
+
+    .product-title {
+        @apply font-bold text-2xl;
+    }
+
+    .product-subtitle {
+        @apply font-bold lg:text-4xl text-2xl mb-2;
+    }
+
+    .product-desc {
+        @apply lg:text-xl text-lg px-4;
+    }
+
+    /** Contact Form **/
+
+    .form-input {
+        @apply text-lg text-text font-bold w-full outline-matcha-accent border-grey-lavender border-2 rounded shadow-lg px-2;
+    }
+    .form-input>option {
+        @apply bg-white text-text appearance-none;
+    }
+
+    .form-input>select {
+        @apply appearance-none;
+    }
+
+
+    .form-btn {
+        @apply flex self-stretch lg:self-start justify-center cursor-pointer mx-2 lg:mx-0 mt-4 lg:text-lg text-sm font-bold bg-matcha-accent text-white p-2 rounded-lg hover:bg-pink-watermelon;
+    }
+
+    .form-label {
+        @apply font-bold text-lg text-text; 
+    }
+
+}

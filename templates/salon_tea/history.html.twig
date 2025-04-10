@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre Salon - Histoire de Matcha Bloom{% endblock %}
+
+{% block body %}
+<div class="flex flex-col w-full max-w-full min-h-screen">
+    <!--Section History -->
+    <section class="flex justify-center bg-all-page bg-footer-text lg:bg-contain bg-fill bg-right-top bg-w-full relative">
+        <div class="flex lg:flex-row flex-col justify-center items-center flex-wrap lg:gap-96 my-24 gap-12">
+            <h2 class="text-text font-bold lg:text-4xl text-2xl lg:me-56">Notre histoire</h2>
+            <img src="{{ asset('images/salon-icon.webp') }}" 
+                alt="icône d'une tasse de thé Matcha" 
+                aria-hidden="true"
+                class="lg:w-48 w-24 h-auto object-fill">
+        </div>
+    </section>
+
+    <!-- History Salon -->
+    <section class="flex flex-col justify-center items-center lg:mx-10 lg:my-6 mx-5 my-2 gap-5 lg:py-10 py-5">
+        <h2 class="text-matcha-accent font-bold lg:text-4xl text-2xl lg:mb-12 mb-6">Le salon</h2>
+        <div class="lg:grid lg:grid-cols-2 flex flex-col gap-6">
+            <!-- Bloc Images -->
+            <div class="grid grid-cols-2 grid-rows-3 gap-3 h-auto">
+            <!-- Image 1 : Prend 1 colonne et 2 lignes -->
+                <img src="{{ asset('images/green-matcha-tea-cup.webp') }}" 
+                    alt="Intérieur du salon de thé Matcha Bloom" 
+                    class="w-full h-full lg:object-contain object-cover rounded-lg col-span-1 row-span-2">
+
+                <!-- Images empilées (1 colonne, 1 ligne chacune) -->
+                <img src="{{ asset('images/man-drinking-matcha-tea.webp') }}" 
+                    alt="Personnes qui boivent du thé matcha" 
+                    class="w-full h-full lg:object-contain object-cover rounded-lg col-span-1 row-span-1">
+
+                <img src="{{ asset('images/person-green-matcha-tea-cup.webp') }}" 
+                    alt="Détail tasse matcha" 
+                    class="w-full h-full lg:object-contain object-cover rounded-lg col-span-1 row-span-1">
+
+                <!-- Dernière image : Prend toute la largeur (2 colonnes, 2 lignes) -->
+                <img src="{{ asset('images/couple-windows-salon.webp') }}" 
+                    alt="Personnes qui boivent du thé matcha" 
+                    class="w-full h-64 max-h-80 object-cover rounded-lg col-span-2 row-span-2">
+            </div>
+                <!-- Paragraphe à droite -->
+            <div class="flex flex-col justify-start gap-4">
+                <p class="text-text lg:text-xl text-lg leading-relaxed">
+                    Découvrez notre salon de thé Matcha Bloom, un lieu chaleureux où déguster 
+                    des thés raffinés et savourer des instants de détente en toute sérénité. 
+                </p>
+                <p class="text-text lg:text-xl text-lg leading-relaxed">
+                    Tea garden yerba maté tea kettle loose leaf tea garden oolong antioxidant 
+                    tea garden darjeeling rize tea time hot steep earl grey nepal. Focus teapot 
+                    shrub latte iced nilgiri zen matcha guayusa aromatic taro yerba maté focus green oolong. 
+                    Brew shoumei lemongrass blend sachet gaiwan hojicha tea time antioxidant antioxidant baihao 
+                    yinzhen scented turmeric lychee. Shrub keemun baihao yinzhen energy taro boba iced caffeine shrub bai mudan. 
+                    Masala chai kombucha infuser rooibos boba boba tea zen antioxidant green masala chai theanine ginger.
+                </p>
+                <p class="text-text lg:text-xl text-lg leading-relaxed my-4">
+                    Energy hojicha shincha catechin camellia sinensis zen rooibos london fog herbal lapsang souchong 
+                    teacup yixing rize energy. Bamboo whisk guayusa blend teacup tea kettle pearl milk genmai jasmine 
+                    chamomile loose leaf herbal teahouse london fog. Kombucha irish breakfast kukicha loose leaf fair 
+                    trade scented yixing sachet sachet black fermentation.
+                    Brew shoumei lemongrass blend sachet gaiwan hojicha tea time antioxidant antioxidant baihao 
+                    yinzhen scented turmeric lychee. Shrub keemun baihao yinzhen energy taro boba iced caffeine shrub bai mudan.   
+                </p>
+                <p class="text-text lg:text-xl text-lg leading-relaxed my-4">
+                    Infuser keemun mint hong kong-style milk herbal infuser sencha sachet taro black sachet mug catechin. 
+                    Matcha darjeeling camellia sinensis aromatic pearl milk keemun focus london fog teacup baihao yinzhen 
+                    keemun theanine lemongrass antioxidant orange pekoe. English breakfast camellia sinensis hot rooibos strainer yixing loose 
+                    leaf teacup ginger black masala chai loose leaf matcha. Strainer scented shrub tea aromatic sencha chamomile bai mudan scented iced. 
+                    Nilgiri tea garden infuser hong kong-style milk fair trade tisane tisane boba white teacup tea kettle scented nilgiri steep 
+                    english breakfast.  
+                </p>
+                <p class="text-text lg:text-xl text-lg leading-relaxed my-4">
+                    Oolong nilgiri darjeeling nepal lemongrass guayusa nilgiri nepal bai mudan shrub masala chai mug blend fair trade herbal. 
+                    London fog keemun ceylon boba tea nokcha gaiwan shincha green zen. Yixing kukicha hojicha shincha lemongrass green tea boba masala 
+                    chai zen masala chai fermentation. Irish breakfast chamomile catechin lemongrass tea time rize assam teacup pearl milk hot english
+                    breakfast infusion tea garden. 
+                    Ginger hojicha teacup shincha focus latte blend english breakfast rose hips boba tea time bamboo whisk.   
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Salon -->
+    <section class="flex flex-col justify-center items-center lg:mx-10 lg:my-6 mx-5 my-2 gap-5 lg:py-10 py-5">
+        <h2 class="text-matcha-accent font-bold lg:text-4xl text-2xl lg:mb-12 mb-6">Nos valeurs</h2>
+        <div class=" flex flex-col items-center gap-14 lg:mx-32 mx-5">
+            <div class="lg:px-20 px-5">
+                <img src="{{ asset('images/green-matcha-tea-cup.webp') }}" 
+                    alt="Intérieur du salon de thé Matcha Bloom"
+                    aria-hidden="true"
+                    class="w-60 h-52 object-cover lg:float-right float-top rounded-xl lg:ms-32 mb-5">
+                <h3 class="text-pink-watermelon font-bold lg:text-xl text-lg text-center my-5"> 1 - Valeur 1 : </h3>
+                <p class="text-text lg:text-lg text-md text-center">Oolong nilgiri darjeeling nepal lemongrass guayusa nilgiri nepal bai mudan shrub masala chai mug blend fair trade herbal.</p>
+            </div>
+
+            <div class="lg:px-20 px-5">
+                <img src="{{ asset('images/person-green-matcha-tea-cup.webp') }}"
+                    alt="Intérieur du salon de thé Matcha Bloom"
+                    aria-hidden="true"
+                    class="w-60 h-52 object-cover lg:float-left float-top rounded-xl lg:me-32 mb-5">
+                <h3 class="text-pink-watermelon font-bold lg:text-xl text-lg text-center my-5"> 2 - Valeur 2 : </h3>
+                <p class="text-text lg:text-lg text-md text-center">Rize shrub nilgiri ceylon yerba maté blend zen masala chai infusion tea kettle nilgiri hojicha gyokuro london fog.
+                Infuser rose hips hong kong-style milk camellia sinensis sencha tea steep masala.</p>
+            </div>
+
+            <div class="lg:px-20 px-5">
+                <img src="{{ asset('images/couple-windows-salon.webp') }}" 
+                    alt="Intérieur du salon de thé Matcha Bloom"
+                    aria-hidden="true"
+                    class="w-60 h-52 object-cover lg:float-right float-top rounded-xl lg:ms-32 mb-5">
+                <h3 class="text-pink-watermelon font-bold lg:text-xl text-lg text-center my-5"> 3 - Valeur 3 : </h3>
+                <p class="text-text lg:text-lg text-md text-center">
+                    Darjeeling mint shrub earl grey lemongrass caffeine english breakfast black english breakfast nilgiri irish breakfast mint english breakfast nokcha teahouse. 
+                    Rooibos turmeric catechin turmeric oolong strainer aromatic caffeine infusion shrub rooibos iced masala chai latte yixing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localisation Salon -->
+    <section class="flex flex-col justify-center items-center lg:mx-24 lg:my-6 mx-5 my-2 gap-5 lg:py-10 py-5">
+        <h2 class="text-matcha-accent font-bold lg:text-4xl text-2xl lg:mb-12 mb-6">Où nous trouver ?</h2>
+        <div class="flex lg:flex-row flex-col lg:gap-52 gap-8 w-full mx-32">
+            <div id="map" class="lg:w-1/2 w-auto h-96 ">
+                <iframe 
+                    title="Carte de localisation du salon de thé Matcha Bloom"
+                    class="w-full h-full rounded-lg shadow-lg"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167997.4728554671!2d2.1822335710597045!3d48.85896335384555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1741708632615!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    loading="lazy">
+                </iframe>
+            </div>
+            <div class="flex flex-col gap-3 justify-center items-center">
+                <h3 class="text-text lg:text-xl text-lg font-bold"> Horaires d'ouverture : </h3>
+                <p class="text-text lg:text-lg text-md"> Lundi : 10H00 - 18H00 </p>
+                <p class="text-text lg:text-lg text-md"> Mardi : 10H00 - 18H00 </p>
+                <p class="text-text lg:text-lg text-md"> Mercredi : 10H00 - 18H00 </p>   
+                <p class="text-text lg:text-lg text-md"> Jeudi : 10H00 - 18H00 </p>
+                <p class="text-text lg:text-lg text-md"> Vendredi : 10H00 - 18H00 </p>
+                <p class="text-text lg:text-lg text-md"> Samedi : 10H00 - 18H00 </p>
+                <p class="text-text lg:text-lg text-md"> Dimanche : Fermé </p>  
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

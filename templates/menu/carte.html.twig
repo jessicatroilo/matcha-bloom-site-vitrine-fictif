@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre Menu - Carte de Matcha Bloom{% endblock %}
+
+{% block body %}
+
+<div class="flex flex-col w-full max-w-full min-h-screen">
+    <!--Section Hero -->
+    <section class="flex justify-center bg-all-page bg-footer-text lg:bg-contain bg-fill bg-right-top bg-w-full relative">
+        <div class="flex lg:flex-row flex-col justify-center items-center flex-wrap lg:gap-96 my-24 gap-12">
+            <h2 class="text-text font-bold lg:text-4xl text-2xl lg:me-56">Notre Menu</h2>
+            <img src="{{ asset('images/menu-icon.webp') }}" 
+                alt="icône d'une fourchette, cuillère et couteau" 
+                aria-hidden="true"
+                class="lg:w-48 w-24 h-auto object-fill">
+        </div>
+    </section>
+
+    <!-- Section Menu -->
+    <section>
+        <div class="text-center my-24">
+            <a href="/ressources/Menu_Matcha_Bloom.pdf" download class="inline-block">
+                <div class="group inline-block">
+                    <img src="{{ asset('/images/Page-menu-1.webp')}}" alt="Menu du restaurant - Page 1 sur 2" 
+                        class="lg:mx-5 mx-auto lg:mb-0 mb-6 w-full max-w-lg rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div class="group inline-block">
+                    <img src="{{ asset('/images/Page-menu-2.webp')}}" alt="Menu du restaurant - Page 2 sur 2" 
+                        class="mx-auto w-full max-w-lg rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </a>
+            <p class="mt-6 text-sm text-text font-bold">Cliquez sur l’image pour télécharger le menu en PDF.</p>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page non trouvée {% endblock %}
+
+{% block body %}
+<section>
+    <div class="flex flex-col my-10">
+        <div class="flex flex-col -justifiy-center items-center">
+            <img class="h-96 w-auto" src="{{ asset('images/error_404.webp')}}" alt="404 page not found">
+            <h2 class="lg:text-4xl text-1xl text-bold my-2 pt-8 text-matcha-accent"> 🌿 Oups… Une feuille s’est envolée ! </h2>
+        </div>
+            
+        <div class="flex flex-col items-start mb-5">
+            <p class="mt-6 lg:text-xl text-md leading-2">
+            Il semble que la page que vous cherchez soit aussi introuvable qu’une perle rare dans un thé en vrac. Peut-être s’est-elle évaporée comme une douce vapeur de matcha…
+            </p>
+            
+            <ul class="list-disc my-3"> 
+                <p class="lg:text-xl text-md">✨ Que faire maintenant ?</p>
+                <li class="mt-2 ms-10 lg:text-xl text-md leading-2">Revenir à l’<a href="{{ path ('app_home') }}" class="underline text-font text-matcha-accent hover:text-pink-watermelon">accueil</a> et savourer l’ambiance de Matcha Bloom.</li>
+                <li class="mt-2 ms-10 lg:text-xl text-md leading-2">Explorer notre <a href="{{ path ('app_menu') }}" class="underline text-font text-matcha-accent hover:text-pink-watermelon">menu</a> et découvrir nos thés et douceurs.</li>
+                <li class="mt-2 ms-10 lg:text-xl text-md leading-2">Ou simplement prendre une pause, respirer profondément et boire une bonne tasse de thé. </li>
+            </ul>
+            <p class="mt-6 lg:text-xl text-md text-center leading-2">Si vous pensez qu’il s’agit d’une erreur, n’hésitez pas à nous <a href="{{ path ('app_contact') }}" class="underline text-font text-matcha-accent hover:text-pink-watermelon">contacter</a>.</p>
+            <p class="mt-6 lg:text-xl text-md text-center leading-2 italic font-bold">"En attendant, détendez-vous… tout finit toujours par infuser au bon moment. 🍃"</p>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
