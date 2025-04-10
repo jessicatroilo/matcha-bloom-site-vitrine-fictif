@@ -6,30 +6,23 @@ import './bootstrap.js';
  * which should already be in your base.html.twig.
  */
 import './styles/app.css';
+import searchBar from '../src/Ressource/js/seach_bar.js';
+import '../src/Ressource/js/burger_menu.js';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
-document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener("DOMContentLoaded", function () {
+  searchBar.init();
+});
+
+/* document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('burger-menu').addEventListener('click', function () {
   const menu = document.getElementById('menu');
   menu.classList.toggle('hidden');
   });
 });
+ */
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('search-menu').addEventListener('click', function () {
-    const search = document.querySelector('#search');
-    const iconSearch = document.querySelector('#icon-search');
 
-    search.classList.toggle('hidden');
 
-    // Vérifie si l'icône existe déjà et la supprime
-    if (iconSearch.classList.contains('fa-magnifying-glass')) {
-      iconSearch.classList.remove('fa-magnifying-glass', 'text-matcha-accent');
-      iconSearch.classList.add('fa-x', 'text-pink-watermelon');
-    } else {
-      iconSearch.classList.remove('fa-x', 'text-pink-watermelon');
-      iconSearch.classList.add('fa-magnifying-glass', 'text-matcha-accent');
-    }
-  });
-});
