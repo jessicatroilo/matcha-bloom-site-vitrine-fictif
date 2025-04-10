@@ -46,7 +46,7 @@
                                     {{ asset('images/logo-navbar.webp') }} 1200w, 
                                     {{ asset('images/logo-navbar.webp') }} 2000w"
                             sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
-                            class="w-full object-contain" 
+                            class="max-w-* h-auto object-contain" 
                             alt="Logo - Matcha Bloom - Tasse verte avec le nom de l'entreprise en dessous" class="w-60 h-20">
                         </a>
                     </div>
@@ -94,7 +94,7 @@
         </header>
 
         <!-- MAIN -->
-        <main role="main" class=" flex flex-grow justify-center w-full">
+        <main role="main" id="main-content" class="flex flex-grow justify-center w-full">
         {% block body %}{% endblock %}
         </main>
 

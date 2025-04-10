@@ -45,10 +45,27 @@ init: function(){
 },
 
 //* ici je vais créer mes fonctions
+// fonction pour afficher la barre de recherche
+handleToggleSearchBar : function() {
+    const isHidden = searchBar.containerElement.classList.contains("hidden");
+    //searchBar.containerElement.classList.toggle("hidden");
 
+    if (isHidden) {
+    searchBar.containerElement.classList.remove("hidden"); // Affiche la barre
+    searchBar.inputElement.focus();
+    searchBar.inputElement.value = ""; // Reset input
+    searchBar.iconElement.classList.replace("fa-magnifying-glass", "fa-x");
+    searchBar.iconElement.classList.replace("text-matcha-accent", "text-pink-watermelon");
+    } else {
+    searchBar.containerElement.classList.add("hidden"); 
+    searchBar.iconElement.classList.replace("fa-x", "fa-magnifying-glass");
+    searchBar.iconElement.classList.replace("text-pink-watermelon", "text-matcha-accent");
+    }
+},
 // fonction pour récupérer les mots clés de mon input
 // pour cela je récupère la valeur de mon input avec la méthode value
 handleKeyWordsInput : function(event){
+    
     const inputValue = searchBar.inputElement.value;
     
     // je vais filtrer mes mots clés en fonction de la valeur de mon input avec la méthode filter ()
@@ -84,21 +101,10 @@ handleKeyWordsInput : function(event){
         //je vais afficher mes résultats dans le DOM
         // je vais utiliser la méthode innerHTML pour afficher mes résultats
         searchBar.resultsElement.innerHTML = resultsSuggestions;
+
     
-},
-
-// fonction pour afficher la barre de recherche
-handleToggleSearchBar : function() {
-    searchBar.containerElement.classList.toggle("hidden");
-
-    if (searchBar.iconElement.classList.contains("fa-magnifying-glass")) {
-    searchBar.iconElement.classList.replace("fa-magnifying-glass", "fa-x");
-    searchBar.iconElement.classList.replace("text-matcha-accent", "text-pink-watermelon");
-    } else {
-    searchBar.iconElement.classList.replace("fa-x", "fa-magnifying-glass");
-    searchBar.iconElement.classList.replace("text-pink-watermelon", "text-matcha-accent");
-    }
 }
+
 };
 
 
