@@ -15,7 +15,7 @@ final class FavoriteProductHomePageController extends AbstractController
      *
      * @return Response La réponse contenant la vue avec les produits favoris de la page d'accueil.
      */
-    #[Route('/', name: 'list', methods: ['GET'])]
+    #[Route('/', name:'list', methods: ['GET'])]
     public function list(): Response
     {
         // On peut récupérer les produits favoris depuis le service ProductHomeService
@@ -34,7 +34,7 @@ final class FavoriteProductHomePageController extends AbstractController
         ]);
     }
 
-    #[Route ('/{id}', name: 'show', methods: ['GET'], requirements: ['id' => '\d+'])]
+    #[Route ('/{id}', name:'show', methods: ['GET'], requirements: ['id' => '\d+'])]
     public function show(int $id, ProductHomeService $productHomeService): Response
     {
         try {
