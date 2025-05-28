@@ -14,7 +14,8 @@
     <p> {{ currentFavoriteProducts.name }} </p>
     <p> {{ currentFavoriteProducts.description }} </p>
     <img src="{{ asset(currentFavoriteProducts.image) }}" alt="Image du produit" class="max-w-xs rounded shadow"> {{ currentFavoriteProducts.image }} </p>
-      <a href="{{path ('app_back_favorite_product_show', {id: currentFavoriteProducts.id})  }}"> Consulter la fiche du produit </a>
+    <a href="{{path ('app_back_favorite_product_show', {id: currentFavoriteProducts.id})  }}"> Consulter la fiche du produit </a>
+    <a href="{{path ('app_back_favorite_product_update', {id: currentFavoriteProducts.id})  }}"> Modifier la fiche du produit </a>
     <hr>
 {% endfor %}
 </div>

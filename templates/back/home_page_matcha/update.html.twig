@@ -1,0 +1,17 @@
+{% extends 'back/backoffice.html.twig' %}
+
+
+{% block title %}Modifier le produit {{updatedFavProduct.name}} {% endblock %}
+
+{% block body %}
+<!-- Updated a page for a fav product-->
+<section id="update-product-fav" aria-labelledby="update-on-product-fav">
+	<div>
+	<a href="{{path ('app_back_favorite_product_list') }}" role="button" aria-label="Bouton de retour à la liste des produits favoris">> Retour à la liste des produits</a>
+		<h3> Modifier le produit {{ updatedFavProduct.name }} </h3>
+		<a  href="{{ path('app_back_favorite_product_list') }}" role="button" aria-label="Bouton de retour à la liste des produits favoris">Retour à la liste des produits</a>
+
+		{{ include('back/home_page_matcha/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+	</div>
+</section>
+{% endblock %}
