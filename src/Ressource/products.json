@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "name": "Matcha Latte",
-        "description": "Un délicieux thé matcha mélangé avec du lait pour une texture onctueuse et réconfortante.",
-        "image": "\/images\/product-matcha-latte.svg",
+        "name": "Glace Matcha",
+        "description": "Une merveilleuse glace",
+        "image": "\/uploads\/produits\/6839ab1057d2b.png",
         "classe_css": "bg-pink-watermelon"
     },
     {

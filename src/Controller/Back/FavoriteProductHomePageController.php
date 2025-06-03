@@ -142,11 +142,11 @@ final class FavoriteProductHomePageController extends AbstractController
                 } catch (FileException $e) {
                     $this->addFlash('error', 'Erreur lors de l’upload de l’image.');
                     // Tu peux soit abandonner ici, soit garder l’ancienne image
-                    $formData->image = $productData['image'];
+                    $formData->image = $favProductData['image'];
                 }
             } else {
                 // Si pas de nouvelle image, garder l’ancienne image dans l'objet DTO
-                $formData->image = $productData['image'];
+                $formData->image = $favProductData['image'];
             }
 
             // Étape 6 : Mise à jour du produit dans le tableau complet
