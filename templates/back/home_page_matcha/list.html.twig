@@ -1,22 +1,26 @@
 {% extends 'back/backoffice.html.twig' %}
 
-{% block title %}Hello HomeProductsController!{% endblock %}
+{% block title %}Gestion des produits populaires{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-{% for currentFavoriteProducts in favoriteProducts %}
-    <p> {{ currentFavoriteProducts.name }} </p>
-    <p> {{ currentFavoriteProducts.description }} </p>
-    <img src="{{ asset(currentFavoriteProducts.image) }}" alt="Image du produit" class="max-w-xs rounded shadow"> {{ currentFavoriteProducts.image }} </p>
-    <a href="{{path ('app_back_favorite_product_show', {id: currentFavoriteProducts.id})  }}"> Consulter la fiche du produit </a>
-    <a href="{{path ('app_back_favorite_product_update', {id: currentFavoriteProducts.id})  }}"> Modifier la fiche du produit </a>
-    <hr>
-{% endfor %}
-</div>
+<section class="backoffice-container">
+    <h2 class="backoffice-title-page"> Gestion de la page d'accueil : Produits populaires</h2>
+
+    <div class="backoffice-popular-products-container">
+    {% for currentFavoriteProducts in favoriteProducts %}
+        <div class="backoffice-popular-products-card">
+                <p class="backoffice-popular-products-card-name"> Nom </p>
+                <p class="backoffice-popular-products-card-item"> {{ currentFavoriteProducts.name }} </p>
+                <p class="backoffice-popular-products-card-desc"> Description </p>
+                <p class="backoffice-popular-products-card-item"> {{ currentFavoriteProducts.description }} </p>                
+                <p class="backoffice-popular-products-img"> Image </p> <img src="{{ asset(currentFavoriteProducts.image) }}" alt="Image du produit" class="max-w-xs rounded shadow">
+            <div class="backoffice-popular-products-btn">
+                <a class="backoffice-btn-show" href="{{path ('app_back_favorite_product_show', {id: currentFavoriteProducts.id})  }}" aria-label="Bouton pour ouvrir la fiche du produit choisi"> <i class="fa-solid fa-eye me-2" aria-label="Icône d'un oeil"></i> Voir la fiche du produit </a>
+                <a class="backoffice-btn-update" href="{{path ('app_back_favorite_product_update', {id: currentFavoriteProducts.id})  }}" aria-label="Bouton pour ouvrir le formulaire de modification du produit"> <i class="fa-solid fa-pen-to-square me-2" aria-label="Icône d'un stylo"></i> Modifier la fiche du produit </a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</section>
 {% endblock %}
