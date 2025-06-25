@@ -6,15 +6,28 @@ use Symfony\Component\Mime\Address;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
 
+
 class MailerService
 {
     private $mailer;
-
+    /**
+     * Constructeur de la classe MailerService
+     *
+     * @param MailerInterface $mailer L'interface du service de messagerie
+     */
     public function __construct(MailerInterface $mailer)
     {
         $this->mailer = $mailer;
     }
-
+    /**
+     * Envoi un email à l'utilisateur et à l'administrateur du site
+     *
+     * @param string $userEmail L'adresse email de l'utilisateur
+     * @param string $userName Le nom de l'utilisateur
+     * @param string $message Le message de l'utilisateur
+     * @param string $subject Le sujet de l'email
+     * @return void
+     */
     public function sendEmail(string $userEmail, string $userName, string $message, string $subject)// avec Email() string $from, string $to, string $subject, string $content, string $replyTo = null
     {
         /* $email = (new Email())

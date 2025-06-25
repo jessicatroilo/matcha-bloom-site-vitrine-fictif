@@ -5,14 +5,14 @@
 
 body {
     background-color: footer-text;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
 };
 
 
 @layer utilities {
 
 
-    /* Navbar */
+    /** Navbar **/
     .navbar-title {
         @apply text-text font-bold text-2xl hover:text-matcha-accent hover:underline;
     }
@@ -24,7 +24,8 @@ body {
     .search-btn {
         @apply block p-2 text-footer-text bg-matcha hover:bg-matcha-accent hover:text-grey-lavender rounded-lg;
     }
-    /* Footer */
+
+    /** Footer **/
     .footer-title {
         @apply lg:text-lg text-base text-footer-text font-bold uppercase mb-3;
     }
@@ -53,7 +54,7 @@ body {
         @apply m-2 lg:text-lg text-sm font-bold;
     }
 
-    /* Accueil - Product */
+    /** Accueil - Product **/
     .product-container {
         @apply relative flex flex-col justify-center items-center overflow-hidden rounded-lg;
     }
@@ -87,7 +88,6 @@ body {
         @apply appearance-none;
     }
 
-
     .form-btn {
         @apply flex self-stretch lg:self-start justify-center cursor-pointer mx-2 lg:mx-0 mt-4 lg:text-lg text-sm font-bold bg-matcha-accent text-white p-2 rounded-lg hover:bg-pink-watermelon;
     }
@@ -95,5 +95,81 @@ body {
     .form-label {
         @apply font-bold text-lg text-text; 
     }
+
+    /** Backoffice **/
+    /* Général */
+    .backoffice-title-page {
+        @apply text-text font-bold text-4xl m-12;
+    }
+
+    .backoffice-container{
+        @apply bg-gray-100 w-full;
+    }
+
+    .backoffice-btn-show {
+        @apply flex justify-center items-center bg-grey-lavender-dark text-white text-lg p-3 rounded-lg hover:text-grey-lavender-dark hover:bg-grey-lavender transition-colors duration-300 my-2;
+
+        }
+    .backoffice-btn-update {
+        @apply flex justify-center items-center bg-pink-watermelon text-white text-lg p-3 rounded-lg hover:bg-pink-200 hover:text-pink-600 transition-colors duration-300 my-2;
+            
+        }
+
+    .backoffice-btn-list {
+        @apply flex justify-end items-center text-text text-xl p-3 rounded-lg hover:text-matcha-accent hover:underline-offset-1 transition-colors duration-300 mt-8 me-8;
+    }
+
+    /* Gestion de l'accueil */
+
+        /* Produits populaires */
+            /* Liste des produits */
+        .backoffice-popular-products-container {
+            @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mx-6; /*1 col mobile, 2 cols tablette, 3 cols desktop*/
+        }
+        .backoffice-popular-products-card {
+            @apply flex flex-col items-start self-start justify-evenly min-h-[630px] bg-text-light rounded-xl shadow-lg p-6 m-2 hover:shadow-xl transition-shadow duration-300;
+        }
+
+        .backoffice-popular-products-card-item {
+            @apply text-text text-xl;
+        }
+
+        .backoffice-popular-products-card-name {
+            @apply text-matcha-accent font-bold text-xl border-b-2 w-full border-gray-200;
+        }
+
+        .backoffice-popular-products-card-desc {
+            @apply  text-matcha-accent font-bold text-xl border-b-2 w-full border-gray-200;
+        }
+
+        .backoffice-popular-products-img {
+            @apply  text-matcha-accent font-bold text-xl border-b-2 w-full border-gray-200;
+        }
+
+        .backoffice-popular-products-btn {
+            @apply flex flex-row gap-2 justify-center items-center;
+        }
+        
+    /* Thème formulaire */
+        .label-style {
+            @apply block text-matcha-accent font-bold text-xl w-full mb-5;
+        }
+
+        .input-style {
+            @apply mt-1 p-2 block w-full text-xl rounded-md border-gray-300 shadow-md;
+        }
+
+        .file-input-style {
+            @apply mt-1 block p-2 w-full cursor-pointer rounded-md border border-gray-300 p-2 bg-white;
+        }
+
+        .form-group {
+            @apply mb-4 w-full bg-white;
+        }
+
+        .form-container {
+            @apply w-full flex flex-col items-start bg-text-light rounded-xl shadow-lg p-6 m-2 gap-2 hover:shadow-xl transition-shadow duration-300;
+
+        }
 
 }

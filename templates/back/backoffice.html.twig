@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+    <!-- META -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Entrez dans l'univers de notre Salon Matcha Bloom, spécialisé dans le matcha. Venez dans notre salon déguster nos spécialités!"> 
+
+        <title>{% block title %}Bienvenue chez Matcha Bloom !{% endblock %}</title>
+
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="{{ asset('images/salon-icon.svg') }}" type="image/x-icon" alt="Logo de l'entreprise">
+
+        <!-- IMG -->
+        
+        <!-- FONT AWESOME, Icons -->
+        <script src="https://kit.fontawesome.com/275e06ef04.js" crossorigin="anonymous"></script>
+
+        <!-- CSS, Tailwindcss -->
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        <!-- JS, Encore -->
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="flex flex-col min-h-screen relative">
+        <!-- HEADER, NAV -->
+        <header role="banner">
+            <nav role="navigation">
+            </nav>
+        </header>
+
+        <!-- MAIN -->
+        <main role="main" id="main-content" class="flex flex-grow justify-center w-full">
+        {% block body %}{% endblock %}
+        </main>
+
+        <!-- FOOTER -->
+        <footer role="contentinfo">
+            <p class="font-bold text-matcha lg:text-lg text-sm">&copy; 2025 - Backoffice Matcha Bloom - 
+                    Site créé par Jessica Troilo 
+                <a href="https://www.linkedin.com/in/jessica-troilo-dev/"  target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/jessicatroilo"  target="_blank" ><i class="fa-brands fa-github"></i></a>
+            </p>
+        </footer>
+    </body>
+</html>
