@@ -3,19 +3,28 @@
 {% block title %}Produit vedette{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1 class="text-xl font-bold mb-4">Fiche du produit {{ oneFavProduct.name }}</h1>
+<section class="backoffice-container">
 
-    <p><strong>Nom :</strong> {{ oneFavProduct.name }}</p>
-    <p><strong>Description :</strong> {{ oneFavProduct.description }}</p>
+    <a  class="backoffice-btn-list" href="{{path ('app_back_favorite_product_list') }}" role="button" aria-label="Bouton de retour à la liste des produits favoris"> <i class="fa-solid fa-rotate-left me-2"></i> Retour à la liste des produits</a>
+    <h2 class="backoffice-title-page"> Fiche du produit {{ oneFavProduct.name }}</h2>
 
-    {% if oneFavProduct.image %}
-        <p><strong>Image :</strong></p>
-        <img src="{{ asset(oneFavProduct.image) }}" alt="Image du produit" class="max-w-xs rounded shadow">
-    {% else %}
-        <p><em>Aucune image disponible</em></p>
-    {% endif %}
-    <a href="{{path ('app_back_favorite_product_list') }}" role="button" aria-label="Bouton de retour à la liste des produits favoris">> Retour à la liste des produits</a>
-    <a href="{{path ('app_back_favorite_product_update', {id: oneFavProduct.id})  }}"> Modifier la fiche du produit </a>
-</div>
+    <div class="mx-2">
+        <div class="backoffice-popular-products-card">
+            <p class="backoffice-popular-products-card-name"> Nom </p>
+            <p class="backoffice-popular-products-card-item"> {{ oneFavProduct.name }} </p>
+            <p class="backoffice-popular-products-card-desc"> Description </p>
+            <p class="backoffice-popular-products-card-item"> {{ oneFavProduct.description }} </p>
+
+            <p class="backoffice-popular-products-img"> Image </p> 
+            {% if oneFavProduct.image %}                
+                <img src="{{ asset(oneFavProduct.image) }}" alt="Image du produit" class="max-w-xs rounded shadow">
+            {% else %}
+                <p><em>Aucune image disponible</em></p>
+            {% endif %}
+            <div class="backoffice-popular-products-btn">
+                <a class="backoffice-btn-update" href="{{path ('app_back_favorite_product_update', {id: oneFavProduct.id})  }}" aria-label="Bouton pour ouvrir le formulaire de modification du produit"> <i class="fa-solid fa-pen-to-square me-2" aria-label="Icône d'un stylo"></i> Modifier la fiche du produit </a>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

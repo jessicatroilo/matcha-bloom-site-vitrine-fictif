@@ -32,7 +32,6 @@ final class FavoriteProductHomePageController extends AbstractController
         }
         // On peut passer les produits à la vue pour les afficher
         return $this->render('back/home_page_matcha/list.html.twig', [
-            'controller_name' => 'FavoriteProductHomePageController',
             'favoriteProducts' => $favoriteProducts,
         ]);
     }

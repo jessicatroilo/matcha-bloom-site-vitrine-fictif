@@ -20,6 +20,7 @@ class FavoriteProductType extends AbstractType
                 'label' => 'Nouvelle image',
                 'mapped' => false,
                 'required' => false,
+                
             ]);
     }
 

@@ -5,12 +5,11 @@
 
 {% block body %}
 <!-- Updated a page for a fav product-->
-<section id="update-product-fav" aria-labelledby="update-on-product-fav">
-	<div>
-	<a href="{{path ('app_back_favorite_product_list') }}" role="button" aria-label="Bouton de retour à la liste des produits favoris">> Retour à la liste des produits</a>
-		<h3> Modifier le produit {{ updatedFavProduct.name }} </h3>
-		<a  href="{{ path('app_back_favorite_product_list') }}" role="button" aria-label="Bouton de retour à la liste des produits favoris">Retour à la liste des produits</a>
+<section id="update-product-fav" aria-labelledby="update-on-product-fav" class="backoffice-container">
+	<a  class="backoffice-btn-list" href="{{path ('app_back_favorite_product_list') }}" role="button" aria-label="Bouton de retour à la liste des produits favoris"> <i class="fa-solid fa-rotate-left me-2"></i> Retour à la liste des produits</a>
+  <h2 class="backoffice-title-page"> Modifier le produit {{ updatedFavProduct.name }}</h2>
 
+	<div class="form-container">
 		{{ include('back/home_page_matcha/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 	</div>
 </section>

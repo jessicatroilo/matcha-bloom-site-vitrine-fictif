@@ -1,0 +1,22 @@
+{% block form_row %}
+  <div class="form-group mb-4">
+    {{ form_label(form) }}
+    {{ form_widget(form) }}
+    {{ form_errors(form) }}
+  </div>
+{% endblock %}
+
+{% block form_label %}
+  <label {{ block('attributes') }} class="label-style">
+    {{ label|trans({}, translation_domain) }}
+  </label>
+{% endblock %}
+
+{% block form_widget_simple %}
+  <input value="{{ value }}" {{ block('widget_attributes') }} class="input-style" />
+{% endblock %}
+
+{% block file_widget %}
+  <input type="file" {{ block('widget_attributes') }} class="input-style" />
+{% endblock %}
+
