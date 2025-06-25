@@ -115,6 +115,10 @@ body {
             
         }
 
+    .backoffice-btn-list {
+        @apply flex justify-end items-center text-text text-xl p-3 rounded-lg hover:text-matcha-accent hover:underline-offset-1 transition-colors duration-300 mt-8 me-8;
+    }
+
     /* Gestion de l'accueil */
 
         /* Produits populaires */
@@ -146,4 +150,26 @@ body {
             @apply flex flex-row gap-2 justify-center items-center;
         }
         
+    /* Thème formulaire */
+        .label-style {
+            @apply block text-matcha-accent font-bold text-xl w-full mb-5;
+        }
+
+        .input-style {
+            @apply mt-1 p-2 block w-full text-xl rounded-md border-gray-300 shadow-md;
+        }
+
+        .file-input-style {
+            @apply mt-1 block p-2 w-full cursor-pointer rounded-md border border-gray-300 p-2 bg-white;
+        }
+
+        .form-group {
+            @apply mb-4 w-full bg-white;
+        }
+
+        .form-container {
+            @apply w-full flex flex-col items-start bg-text-light rounded-xl shadow-lg p-6 m-2 gap-2 hover:shadow-xl transition-shadow duration-300;
+
+        }
+
 }
