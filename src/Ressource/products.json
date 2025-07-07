@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "name": "Glace Matcha",
-        "description": "Une merveilleuse glace",
+        "name": "Glace Matcha Verte",
+        "description": "Une merveilleuse glace verte",
         "image": "\/uploads\/produits\/6839ab1057d2b.png",
         "classe_css": "bg-pink-watermelon"
     },

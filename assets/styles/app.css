@@ -107,11 +107,11 @@ body {
     }
 
     .backoffice-btn-show {
-        @apply flex justify-center items-center bg-grey-lavender-dark text-white text-lg p-3 rounded-lg hover:text-grey-lavender-dark hover:bg-grey-lavender transition-colors duration-300 my-2;
+        @apply flex justify-center items-center bg-grey-lavender-dark text-white text-lg p-2 rounded-lg hover:text-grey-lavender-dark hover:bg-grey-lavender transition-colors duration-300 my-2;
 
         }
     .backoffice-btn-update {
-        @apply flex justify-center items-center bg-pink-watermelon text-white text-lg p-3 rounded-lg hover:bg-pink-200 hover:text-pink-600 transition-colors duration-300 my-2;
+        @apply flex justify-center items-center bg-pink-watermelon text-white text-lg p-2 rounded-lg hover:bg-pink-200 hover:text-pink-600 transition-colors duration-300 my-2;
             
         }
 
