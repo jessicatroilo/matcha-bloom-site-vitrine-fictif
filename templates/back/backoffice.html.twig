@@ -30,7 +30,7 @@
             <!-- HEADER, NAV -->
             <div class="flex h-screen">
             <!-- BARRE DE NAVIGATION VERTICALE -->
-            <nav class="w-64 bg-gray-600 text-white p-6 flex flex-col gap-4">
+            <nav class="w-64 bg-matcha-dark text-white p-6 flex flex-col gap-4">
                 <h1 class="text-xl font-bold mb-4">Backoffice</h1>
                 <a href="{{ path('app_back_admin') }}" class="hover:bg-gray-700 p-2 font-bold rounded">Tableau de bord</a>
                 <a href="{{ path('app_back_favorite_product_list') }}" class="hover:bg-gray-700 p-2 rounded"> Gestion de la Page d'accueil</a>
@@ -44,17 +44,17 @@
                 <!-- HEADER -->
                 <header class="bg-gray-200 px-6 py-4 flex justify-between items-center">
                     <p class="text-lg font-semibold">Matcha Bloom</p>
-                    <a href="#" class="text-matcha-accent font-bold">Mon compte</a>
+                    <a href="#" class="text-matcha-dark font-bold">Mon compte</a>
                 </header>
 
                 <!-- MAIN -->
-                <main class="flex-1 overflow-auto p-6 bg-gray-100">
+                <main class="flex-1 overflow-auto p-6 bg-lavender-soft">
                     {% block body %}{% endblock %}
                 </main>
 
                 <!-- FOOTER -->
-                <footer class="bg-gray-100 text-center text-sm py-4">
-                    <p class="font-bold text-matcha-accent">&copy; 2025 - Matcha Bloom - 
+                <footer class="bg-lavender-soft text-center text-sm py-4">
+                    <p class="font-bold text-matcha-dark">&copy; 2025 - Matcha Bloom - 
                         Site par Jessica Troilo 
                         <a href="https://www.linkedin.com/in/jessica-troilo-dev/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="https://github.com/jessicatroilo" target="_blank"><i class="fa-brands fa-github"></i></a>
