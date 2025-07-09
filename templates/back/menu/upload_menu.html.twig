@@ -1,0 +1,28 @@
+{% extends 'back/backoffice.html.twig' %}
+
+{% block title %}Gestion du PDF{% endblock %}
+
+{% block body %}
+    <section class="backoffice-container">
+        <h2 class="backoffice-title-page">Mettre à jour le PDF</h1>
+
+        {% for message in app.flashes('success') %}
+            <div class="bg-success text-green-800 p-2 mb-4 rounded">{{ message }}</div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class="bg-error text-red-800 p-2 mb-4 rounded">{{ message }}</div>
+        {% endfor %}
+
+        {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}, 'method': 'POST'}) }}
+            {{ form_row(form.pdf) }}
+            <button type="submit" class="backoffice-btn-update">Télécharger</button>
+        {{ form_end(form) }}
+
+        <hr class="my-8">
+
+        <h2 class="text-lg font-semibold mb-2">Document actuel</h2>
+        <a href="{{ asset('/ressources/Menu_Matcha_Bloom.pdf') }}" target="_blank" class="text-blue-600 underline">
+            Voir / Télécharger le document
+        </a>
+    </section>
+{% endblock %}

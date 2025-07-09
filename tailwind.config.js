@@ -17,10 +17,12 @@ module.exports = {
     'hover:border-grey-lavender-dark',
     'border-grey-lavender',
     'hover:border-grey-lavender',
+    'bg-matcha-dark',
   ],
   theme: {
     extend: {
       colors: {
+        //site côté client
         'matcha': '#A7C957',
         'matcha-light': '#DAF166',
         'matcha-accent': '#8AB545',
@@ -33,6 +35,27 @@ module.exports = {
         'text-light': '#FFFFFF',
         'footer-text': '#FFF8E2',
         'btn-light': '#FFFAFA',
+
+        //site côté admin
+        'matcha-dark': '#466b4d',
+
+        // Lavande grisé pour fond de page backoffice
+        'lavender-soft': '#f3f3f9',
+
+        // Textes gris foncé
+        'text-main': '#1e293b', // gris-800
+
+        // Utilitaires
+        'neutral-bg': '#ffffff', // fond des cartes
+        'neutral-border': '#d1d5db', // gris-300
+        'highlight': '#e2e8f0', // gris bleuté clair
+
+        // Alerte
+        'success': '#15803d', // vert foncé
+        'error': '#dc2626',   // rouge
+        'warning': '#d97706', // orange
+
+        // Lien
       },
 
       backgroundImage: {

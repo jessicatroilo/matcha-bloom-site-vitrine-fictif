@@ -27,24 +27,40 @@
         {% endblock %}
     </head>
     <body class="flex flex-col min-h-screen relative">
-        <!-- HEADER, NAV -->
-        <header role="banner">
-            <nav role="navigation">
+            <!-- HEADER, NAV -->
+            <div class="flex h-screen">
+            <!-- BARRE DE NAVIGATION VERTICALE -->
+            <nav class="w-64 bg-matcha-dark text-white p-6 flex flex-col gap-4">
+                <h1 class="text-xl font-bold mb-4">Backoffice</h1>
+                <a href="{{ path('app_back_admin') }}" class="hover:bg-gray-700 p-2 font-bold rounded">Tableau de bord</a>
+                <a href="{{ path('app_back_favorite_product_list') }}" class="hover:bg-gray-700 p-2 rounded"> Gestion de la Page d'accueil</a>
+                <a href="{{ path('back_menu_upload') }}" class="hover:bg-gray-700 p-2 rounded">Gestion du Menu</a>
+                <a href="#" class="hover:bg-gray-700 p-2 rounded">Mon compte</a>
+                <a href="#" class="text-red-400 hover:bg-gray-700 p-2 font-bold rounded">Déconnexion</a>
             </nav>
-        </header>
 
-        <!-- MAIN -->
-        <main role="main" id="main-content" class="flex flex-grow justify-center w-full">
-        {% block body %}{% endblock %}
-        </main>
+            <!-- CONTENU PRINCIPAL -->
+            <div class="flex-1 flex flex-col">
+                <!-- HEADER -->
+                <header class="bg-gray-200 px-6 py-4 flex justify-between items-center">
+                    <p class="text-lg font-semibold">Matcha Bloom</p>
+                    <a href="#" class="text-matcha-dark font-bold">Mon compte</a>
+                </header>
 
-        <!-- FOOTER -->
-        <footer role="contentinfo">
-            <p class="font-bold text-matcha lg:text-lg text-sm">&copy; 2025 - Backoffice Matcha Bloom - 
-                    Site créé par Jessica Troilo 
-                <a href="https://www.linkedin.com/in/jessica-troilo-dev/"  target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/jessicatroilo"  target="_blank" ><i class="fa-brands fa-github"></i></a>
-            </p>
-        </footer>
+                <!-- MAIN -->
+                <main class="flex-1 overflow-auto p-6 bg-lavender-soft">
+                    {% block body %}{% endblock %}
+                </main>
+
+                <!-- FOOTER -->
+                <footer class="bg-lavender-soft text-center text-sm py-4">
+                    <p class="font-bold text-matcha-dark">&copy; 2025 - Matcha Bloom - 
+                        Site par Jessica Troilo 
+                        <a href="https://www.linkedin.com/in/jessica-troilo-dev/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/jessicatroilo" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </p>
+                </footer>
+            </div>
+        </div>
     </body>
 </html>
